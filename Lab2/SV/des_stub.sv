@@ -28,23 +28,203 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
    output logic [47:0] SubKey15;
    output logic [47:0] SubKey16;
 
+
+//PC1 instantiation 1
+//////////////
+   logic [27:0]left_block1,right_block1;
+   logic [27:0]left_block_shift1,right_block_shift1;
+
+   PC1 pc_1(key,left_block1,right_block1);
+
+   assign left_block_shift1 = {left_block1[26:0],left_block1[27]};
+   assign right_block_shift1 = {right_block1[26:0],right_block1[27]};
+
+   
+   PC2 pc1(left_block_shift1,right_block_shift1,SubKey1);
+//////////////
+//PC1 instantiation 2
+//////////////
+   
+   logic [27:0]left_block_shift2,right_block_shift2;
+
+   assign left_block_shift2 = {left_block_shift1[26:0],left_block_shift1[27]};
+   assign right_block_shift2 = {right_block_shift1[26:0],right_block_shift1[27]};
+
+   
+   PC2 pc2(left_block_shift2,right_block_shift2,SubKey2);
+//////////////
+//PC1 instantiation 3
+//////////////
+   
+   logic [27:0]left_block_shift3,right_block_shift3;
+
+   assign left_block_shift3 = {left_block_shift2[25:0],left_block_shift2[27:26]};
+   assign right_block_shift3 = {right_block_shift2[25:0],right_block_shift2[27:26]};
+
+   
+   PC2 pc3(left_block_shift3,right_block_shift3,SubKey3);
+//////////////
+//PC1 instantiation 4
+//////////////
+   
+   logic [27:0]left_block_shift4,right_block_shift4;
+
+   assign left_block_shift4 = {left_block_shift3[25:0],left_block_shift3[27:26]};
+   assign right_block_shift4 = {right_block_shift3[25:0],right_block_shift3[27:26]};
+
+   
+   PC2 pc4(left_block_shift4,right_block_shift4,SubKey4);
+//////////////
+//PC1 instantiation 5
+//////////////
+   
+   logic [27:0]left_block_shift5,right_block_shift5;
+
+   assign left_block_shift5 = {left_block_shift4[25:0],left_block_shift4[27:26]};
+   assign right_block_shift5 = {right_block_shift4[25:0],right_block_shift4[27:26]};
+
+   
+   PC2 pc5(left_block_shift5,right_block_shift5,SubKey5);
+//////////////
+//PC1 instantiation 6
+//////////////
+  
+   logic [27:0]left_block_shift6,right_block_shift6;
+
+   assign left_block_shift6 = {left_block_shift5[25:0],left_block_shift5[27:26]};
+   assign right_block_shift6 = {right_block_shift5[25:0],right_block_shift5[27:26]};
+
+   
+   PC2 pc6(left_block_shift6,right_block_shift6,SubKey6);
+//////////////
+//PC1 instantiation 7
+//////////////
+  
+   logic [27:0]left_block_shift7,right_block_shift7;
+
+   assign left_block_shift7 = {left_block_shift6[25:0],left_block_shift6[27:26]};
+   assign right_block_shift7 = {right_block_shift6[25:0],right_block_shift6[27:26]};
+
+   
+   PC2 pc7(left_block_shift7,right_block_shift7,SubKey7);
+//////////////
+//PC1 instantiation 8
+//////////////
+  
+   logic [27:0]left_block_shift8,right_block_shift8;
+
+   assign left_block_shift8 = {left_block_shift7[25:0],left_block_shift7[27:26]};
+   assign right_block_shift8 = {right_block_shift7[25:0],right_block_shift7[27:26]};
+
+   
+   PC2 pc8(left_block_shift8,right_block_shift8,SubKey8);
+//////////////
+//PC1 instantiation 9
+//////////////
+
+   logic [27:0]left_block_shift9,right_block_shift9;
+
+   assign left_block_shift9 = {left_block_shift8[26:0],left_block_shift8[27]};
+   assign right_block_shift9 = {right_block_shift8[26:0],right_block_shift8[27]};
+
+   PC2 pc9(left_block_shift9,right_block_shift9,SubKey9);
+//////////////
+//PC1 instantiation 10
+//////////////
+   
+   logic [27:0]left_block_shift10,right_block_shift10;
+
+   assign left_block_shift10 = {left_block_shift9[25:0],left_block_shift9[27:26]};
+   assign right_block_shift10 = {right_block_shift9[25:0],right_block_shift9[27:26]};
+
+  
+   PC2 pc10(left_block_shift10,right_block_shift10,SubKey10);
+//////////////
+//PC1 instantiation 11
+//////////////
+   
+   logic [27:0]left_block_shift11,right_block_shift11;
+
+   assign left_block_shift11 = {left_block_shift10[25:0],left_block1_shift10[27:26]};
+   assign right_block_shift11 = {right_block_shift[25:0],right_block_shift10[27:26]};
+
+   PC2 pc11(left_block_shift11,right_block_shift11,SubKey11);
+//////////////
+//PC1 instantiation 12
+//////////////
+
+   logic [27:0]left_block_shift12,right_block_shift12;
+
+   assign left_block_shift12 = {left_block1_shift11[25:0],left_block_shift11[27:26]};
+   assign right_block_shift12 = {right_block1_shift11[25:0],right_block_shift11[27:26]};
+
+   PC2 pc12(left_block_shift12,right_block_shift12,SubKey12);
+//////////////
+//PC1 instantiation 13
+//////////////
+ 
+   logic [27:0]left_block_shift13,right_block_shift13;
+
+   assign left_block_shift13 = {left_block1_shift12[25:0],left_block_shift12[27:26]};
+   assign right_block_shift13 = {right_block_shift12[25:0],right_block1_shift12[27:26]};
+
+ 
+   PC2 pc13(left_block_shift13,right_block_shift13,SubKey13);
+//////////////
+//PC1 instantiation 14
+//////////////
+  
+   logic [27:0]left_block_shift14,right_block_shift14;
+
+   assign left_block_shift14 = {left_block_shift13[25:0],left_block_shift13[27:26]};
+   assign right_block_shift14 = {right_block_shift13[25:0],right_block1_shift13[27:26]};
+
+  
+   PC2 pc14(left_block_shift14,right_block_shift14,SubKey14);
+//////////////
+//PC1 instantiation 15
+//////////////
+  
+   logic [27:0]left_block_shift15,right_block_shift15;
+
+   assign left_block_shift15 = {left_block1_shift14[25:0],left_block_shift14[27:26]};
+   assign right_block_shift15 = {right_block1_shift14[25:0],right_block_shift14[27:26]};
+
+  
+   PC2 pc15(left_block_shift15,right_block_shift15,SubKey15);
+//////////////
+//PC1 instantiation 16
+//////////////
+   
+   logic [27:0]left_block_shift16,right_block_shift16;
+
+   assign left_block_shift16 = {left_block_shift15[26:0],left_block_shift15[27]};
+   assign right_block_shift16 = {right_block_shift15[26:0],right_block_shift15[27]};
+
+ 
+   PC2 pc16(left_block_shift16,right_block_shift16,SubKey16);
+//////////////
+
 endmodule // GenerateKeys
 
 module PC1 (key, left_block, right_block);
-
    input logic [63:0]  key;
    output logic [27:0] left_block;
    output logic [27:0] right_block;
+
+   right_block = key[27:0];
+   left_block = key[59:32];
+
 
    logic [55:0]        out_block;
 
 endmodule // PC1
 
 module PC2 (left_block, right_block, subkey);
-
-   input logic [27:0] left_block;
-   input logic [27:0] right_block;
-   output logic [47:0] subkey;
+	input logic [27:0] left_block;
+	input logic [27:0] right_block;
+	output logic [47:0] subkey;
+	subkey = {left_block[23:0],right_block[23:0]}
 
 endmodule // PC2
 
@@ -75,9 +255,26 @@ endmodule // Feistel
 // DES block round
 module round (inp_block, subkey, out_block);
 
-   input logic [63:0]  inp_block;
-   input logic [47:0]  subkey;
-   output logic [63:0] out_block;
+	//splitting the inp_block
+	logic [31:0] right_blockI;	//right_block initial to store the inital value before it is modified thorugh the feistel so we can properly swap with left_block
+	logic [31:0] right_blockFeistel;//right_block final that will be the one that is brought thorugh the festel and conancated with out_block at the end
+	logic [31:0] right_blockF;
+	logic [31:0] left_block;	//left_block that will be swapped with righ_blockI and conecatged with right_blockF into out_block
+
+	assign right_blockI = inp_block[31:0];
+	assign left_block=inp_block[63:32];
+
+	feistel(right_blockI, subkey, right_blockFeistel);
+
+	assign right_blockF = right_blockFeistel ^ left_block;
+	assign left_block = right_blockI;
+
+	assign out_block = {left_block, right_blockF};
+	
+
+	input logic [63:0]  inp_block;
+	input logic [47:0]  subkey;
+	output logic [63:0] out_block;
 
 endmodule // round1
 
