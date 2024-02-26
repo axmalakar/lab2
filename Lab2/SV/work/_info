@@ -7,4 +7,29 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/lance/OneDrive/VScode/SV/lab2/lab2/Lab2/SV
+Z0 dC:/Users/lance/OneDrive/VScode/SV/lab2/lab2/Lab2/SV
+vGenerateKeys
+DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+!s110 1708973419
+!i10b 1
+!s100 lg4mIO;Km?_IoOk=b4j?W1
+I_MzM:^hScff463jmJ1UI=1
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 des_stub_sv_unit
+S1
+R0
+w1708973368
+8des_stub.sv
+Fdes_stub.sv
+L0 7
+OL;L;10.7f;67
+r1
+!s85 0
+31
+!s108 1708973419.000000
+!s107 tb_des.sv|des_stub.sv|
+!s90 des_stub.sv|tb_des.sv|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0
+n@generate@keys
