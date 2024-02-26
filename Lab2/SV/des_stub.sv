@@ -29,182 +29,182 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
    output logic [47:0] SubKey16;
 
 
-//PC1 instantiation 1
-//////////////
-   logic [27:0]left_block1,right_block1;
-   logic [27:0]left_block_shift1,right_block_shift1;
+	//PC1 instantiation 1
+	//////////////
+	logic [27:0]left_block1,right_block1;
+	logic [27:0]left_block_shift1,right_block_shift1;
 
-   PC1 pc_1(key,left_block1,right_block1);
+	PC1 pc_1(key,left_block1,right_block1);
 
-   assign left_block_shift1 = {left_block1[26:0],left_block1[27]};
-   assign right_block_shift1 = {right_block1[26:0],right_block1[27]};
+	assign left_block_shift1 = {left_block1[26:0],left_block1[27]};
+	assign right_block_shift1 = {right_block1[26:0],right_block1[27]};
 
-   
-   PC2 pc1(left_block_shift1,right_block_shift1,SubKey1);
-//////////////
-//PC1 instantiation 2
-//////////////
-   
-   logic [27:0]left_block_shift2,right_block_shift2;
+	
+	PC2 pc1(left_block_shift1,right_block_shift1,SubKey1);
+	//////////////
+	//PC1 instantiation 2
+	//////////////
+	
+	logic [27:0]left_block_shift2,right_block_shift2;
 
-   assign left_block_shift2 = {left_block_shift1[26:0],left_block_shift1[27]};
-   assign right_block_shift2 = {right_block_shift1[26:0],right_block_shift1[27]};
+	assign left_block_shift2 = {left_block_shift1[26:0],left_block_shift1[27]};
+	assign right_block_shift2 = {right_block_shift1[26:0],right_block_shift1[27]};
 
 
-   
-   PC2 pc2(left_block_shift2,right_block_shift2,SubKey2);
-//////////////
-//PC1 instantiation 3
-//////////////
-   
-   logic [27:0]left_block_shift3,right_block_shift3;
+	
+	PC2 pc2(left_block_shift2,right_block_shift2,SubKey2);
+	//////////////
+	//PC1 instantiation 3
+	//////////////
+	
+	logic [27:0]left_block_shift3,right_block_shift3;
 
-   assign left_block_shift3 = {left_block_shift2[25:0],left_block_shift2[27:26]};
-   assign right_block_shift3 = {right_block_shift2[25:0],right_block_shift2[27:26]};
+	assign left_block_shift3 = {left_block_shift2[25:0],left_block_shift2[27:26]};
+	assign right_block_shift3 = {right_block_shift2[25:0],right_block_shift2[27:26]};
 
-   
-   PC2 pc3(left_block_shift3,right_block_shift3,SubKey3);
-//////////////
-//PC1 instantiation 4
-//////////////
-   
-   logic [27:0]left_block_shift4,right_block_shift4;
+	
+	PC2 pc3(left_block_shift3,right_block_shift3,SubKey3);
+	//////////////
+	//PC1 instantiation 4
+	//////////////
+	
+	logic [27:0]left_block_shift4,right_block_shift4;
 
-   assign left_block_shift4 = {left_block_shift3[25:0],left_block_shift3[27:26]};
-   assign right_block_shift4 = {right_block_shift3[25:0],right_block_shift3[27:26]};
+	assign left_block_shift4 = {left_block_shift3[25:0],left_block_shift3[27:26]};
+	assign right_block_shift4 = {right_block_shift3[25:0],right_block_shift3[27:26]};
 
-   
-   PC2 pc4(left_block_shift4,right_block_shift4,SubKey4);
-//////////////
-//PC1 instantiation 5
-//////////////
-   
-   logic [27:0]left_block_shift5,right_block_shift5;
+	
+	PC2 pc4(left_block_shift4,right_block_shift4,SubKey4);
+	//////////////
+	//PC1 instantiation 5
+	//////////////
+	
+	logic [27:0]left_block_shift5,right_block_shift5;
 
-   assign left_block_shift5 = {left_block_shift4[25:0],left_block_shift4[27:26]};
-   assign right_block_shift5 = {right_block_shift4[25:0],right_block_shift4[27:26]};
+	assign left_block_shift5 = {left_block_shift4[25:0],left_block_shift4[27:26]};
+	assign right_block_shift5 = {right_block_shift4[25:0],right_block_shift4[27:26]};
 
-   
-   PC2 pc5(left_block_shift5,right_block_shift5,SubKey5);
-//////////////
-//PC1 instantiation 6
-//////////////
-  
-   logic [27:0]left_block_shift6,right_block_shift6;
+	
+	PC2 pc5(left_block_shift5,right_block_shift5,SubKey5);
+	//////////////
+	//PC1 instantiation 6
+	//////////////
+	
+	logic [27:0]left_block_shift6,right_block_shift6;
 
-   assign left_block_shift6 = {left_block_shift5[25:0],left_block_shift5[27:26]};
-   assign right_block_shift6 = {right_block_shift5[25:0],right_block_shift5[27:26]};
+	assign left_block_shift6 = {left_block_shift5[25:0],left_block_shift5[27:26]};
+	assign right_block_shift6 = {right_block_shift5[25:0],right_block_shift5[27:26]};
 
-   
-   PC2 pc6(left_block_shift6,right_block_shift6,SubKey6);
-//////////////
-//PC1 instantiation 7
-//////////////
-  
-   logic [27:0]left_block_shift7,right_block_shift7;
+	
+	PC2 pc6(left_block_shift6,right_block_shift6,SubKey6);
+	//////////////
+	//PC1 instantiation 7
+	//////////////
+	
+	logic [27:0]left_block_shift7,right_block_shift7;
 
-   assign left_block_shift7 = {left_block_shift6[25:0],left_block_shift6[27:26]};
-   assign right_block_shift7 = {right_block_shift6[25:0],right_block_shift6[27:26]};
+	assign left_block_shift7 = {left_block_shift6[25:0],left_block_shift6[27:26]};
+	assign right_block_shift7 = {right_block_shift6[25:0],right_block_shift6[27:26]};
 
-   
-   PC2 pc7(left_block_shift7,right_block_shift7,SubKey7);
-//////////////
-//PC1 instantiation 8
-//////////////
-  
-   logic [27:0]left_block_shift8,right_block_shift8;
+	
+	PC2 pc7(left_block_shift7,right_block_shift7,SubKey7);
+	//////////////
+	//PC1 instantiation 8
+	//////////////
+	
+	logic [27:0]left_block_shift8,right_block_shift8;
 
-   assign left_block_shift8 = {left_block_shift7[25:0],left_block_shift7[27:26]};
-   assign right_block_shift8 = {right_block_shift7[25:0],right_block_shift7[27:26]};
+	assign left_block_shift8 = {left_block_shift7[25:0],left_block_shift7[27:26]};
+	assign right_block_shift8 = {right_block_shift7[25:0],right_block_shift7[27:26]};
 
-   
-   PC2 pc8(left_block_shift8,right_block_shift8,SubKey8);
-//////////////
-//PC1 instantiation 9
-//////////////
+	
+	PC2 pc8(left_block_shift8,right_block_shift8,SubKey8);
+	//////////////
+	//PC1 instantiation 9
+	//////////////
 
-   logic [27:0]left_block_shift9,right_block_shift9;
+	logic [27:0]left_block_shift9,right_block_shift9;
 
-   assign left_block_shift9 = {left_block_shift8[26:0],left_block_shift8[27]};
-   assign right_block_shift9 = {right_block_shift8[26:0],right_block_shift8[27]};
+	assign left_block_shift9 = {left_block_shift8[26:0],left_block_shift8[27]};
+	assign right_block_shift9 = {right_block_shift8[26:0],right_block_shift8[27]};
 
-   PC2 pc9(left_block_shift9,right_block_shift9,SubKey9);
-//////////////
-//PC1 instantiation 10
-//////////////
-   
-   logic [27:0]left_block_shift10,right_block_shift10;
+	PC2 pc9(left_block_shift9,right_block_shift9,SubKey9);
+	//////////////
+	//PC1 instantiation 10
+	//////////////
+	
+	logic [27:0]left_block_shift10,right_block_shift10;
 
-   assign left_block_shift10 = {left_block_shift9[25:0],left_block_shift9[27:26]};
-   assign right_block_shift10 = {right_block_shift9[25:0],right_block_shift9[27:26]};
+	assign left_block_shift10 = {left_block_shift9[25:0],left_block_shift9[27:26]};
+	assign right_block_shift10 = {right_block_shift9[25:0],right_block_shift9[27:26]};
 
-  
-   PC2 pc10(left_block_shift10,right_block_shift10,SubKey10);
-//////////////
-//PC1 instantiation 11
-//////////////
-   
-   logic [27:0]left_block_shift11,right_block_shift11;
+	
+	PC2 pc10(left_block_shift10,right_block_shift10,SubKey10);
+	//////////////
+	//PC1 instantiation 11
+	//////////////
+	
+	logic [27:0]left_block_shift11,right_block_shift11;
 
-   assign left_block_shift11 = {left_block_shift10[25:0],left_block1_shift10[27:26]};
-   assign right_block_shift11 = {right_block_shift[25:0],right_block_shift10[27:26]};
+	assign left_block_shift11 = {left_block_shift10[25:0],left_block1_shift10[27:26]};
+	assign right_block_shift11 = {right_block_shift[25:0],right_block_shift10[27:26]};
 
-   PC2 pc11(left_block_shift11,right_block_shift11,SubKey11);
-//////////////
-//PC1 instantiation 12
-//////////////
+	PC2 pc11(left_block_shift11,right_block_shift11,SubKey11);
+	//////////////
+	//PC1 instantiation 12
+	//////////////
 
-   logic [27:0]left_block_shift12,right_block_shift12;
+	logic [27:0]left_block_shift12,right_block_shift12;
 
-   assign left_block_shift12 = {left_block1_shift11[25:0],left_block_shift11[27:26]};
-   assign right_block_shift12 = {right_block1_shift11[25:0],right_block_shift11[27:26]};
+	assign left_block_shift12 = {left_block1_shift11[25:0],left_block_shift11[27:26]};
+	assign right_block_shift12 = {right_block1_shift11[25:0],right_block_shift11[27:26]};
 
-   PC2 pc12(left_block_shift12,right_block_shift12,SubKey12);
-//////////////
-//PC1 instantiation 13
-//////////////
- 
-   logic [27:0]left_block_shift13,right_block_shift13;
+	PC2 pc12(left_block_shift12,right_block_shift12,SubKey12);
+	//////////////
+	//PC1 instantiation 13
+	//////////////
+	
+	logic [27:0]left_block_shift13,right_block_shift13;
 
-   assign left_block_shift13 = {left_block1_shift12[25:0],left_block_shift12[27:26]};
-   assign right_block_shift13 = {right_block_shift12[25:0],right_block1_shift12[27:26]};
+	assign left_block_shift13 = {left_block1_shift12[25:0],left_block_shift12[27:26]};
+	assign right_block_shift13 = {right_block_shift12[25:0],right_block1_shift12[27:26]};
 
- 
-   PC2 pc13(left_block_shift13,right_block_shift13,SubKey13);
-//////////////
-//PC1 instantiation 14
-//////////////
-  
-   logic [27:0]left_block_shift14,right_block_shift14;
+	
+	PC2 pc13(left_block_shift13,right_block_shift13,SubKey13);
+	//////////////
+	//PC1 instantiation 14
+	//////////////
+	
+	logic [27:0]left_block_shift14,right_block_shift14;
 
-   assign left_block_shift14 = {left_block_shift13[25:0],left_block_shift13[27:26]};
-   assign right_block_shift14 = {right_block_shift13[25:0],right_block1_shift13[27:26]};
+	assign left_block_shift14 = {left_block_shift13[25:0],left_block_shift13[27:26]};
+	assign right_block_shift14 = {right_block_shift13[25:0],right_block1_shift13[27:26]};
 
-  
-   PC2 pc14(left_block_shift14,right_block_shift14,SubKey14);
-//////////////
-//PC1 instantiation 15
-//////////////
-  
-   logic [27:0]left_block_shift15,right_block_shift15;
+	
+	PC2 pc14(left_block_shift14,right_block_shift14,SubKey14);
+	//////////////
+	//PC1 instantiation 15
+	//////////////
+	
+	logic [27:0]left_block_shift15,right_block_shift15;
 
-   assign left_block_shift15 = {left_block1_shift14[25:0],left_block_shift14[27:26]};
-   assign right_block_shift15 = {right_block1_shift14[25:0],right_block_shift14[27:26]};
+	assign left_block_shift15 = {left_block1_shift14[25:0],left_block_shift14[27:26]};
+	assign right_block_shift15 = {right_block1_shift14[25:0],right_block_shift14[27:26]};
 
-  
-   PC2 pc15(left_block_shift15,right_block_shift15,SubKey15);
-//////////////
-//PC1 instantiation 16
-//////////////
-   
-   logic [27:0]left_block_shift16,right_block_shift16;
+	
+	PC2 pc15(left_block_shift15,right_block_shift15,SubKey15);
+	//////////////
+	//PC1 instantiation 16
+	//////////////
+	
+	logic [27:0]left_block_shift16,right_block_shift16;
 
-   assign left_block_shift16 = {left_block_shift15[26:0],left_block_shift15[27]};
-   assign right_block_shift16 = {right_block_shift15[26:0],right_block_shift15[27]};
+	assign left_block_shift16 = {left_block_shift15[26:0],left_block_shift15[27]};
+	assign right_block_shift16 = {right_block_shift15[26:0],right_block_shift15[27]};
 
- 
-   PC2 pc16(left_block_shift16,right_block_shift16,SubKey16);
-//////////////
+	
+	PC2 pc16(left_block_shift16,right_block_shift16,SubKey16);
+	//////////////
 
 endmodule // GenerateKeys
 
@@ -216,17 +216,73 @@ module PC1 (key, left_block, right_block);
    right_block = key[27:0];
    left_block = key[59:32];
 
-   //row 1
-   left_block[27] = key[63-57];
-   left_block[26] = key[63-57];
-   left_block[27] = key[63-57];
-   left_block[27] = key[63-57];
-   left_block[27] = key[63-57];
-   left_block[27] = key[63-57];
-   left_block[27] = key[63-57];
+	//left block
+	//row 1
+	left_block[27] = key[63-57];
+	left_block[26] = key[63-49];
+	left_block[25] = key[63-41];
+	left_block[24] = key[63-33];
+	left_block[23] = key[63-25];
+	left_block[22] = key[63-17];
+	left_block[21] = key[63-9];
+	//row 2
+	left_block[20] = key[63-1];
+	left_block[19] = key[63-58];
+	left_block[18] = key[63-50];
+	left_block[17] = key[63-42];
+	left_block[16] = key[63-34];
+	left_block[15] = key[63-26]
+	left_block[14] = key[63-18];
+	//row 3
+	left_block[13] = key[63-10];
+	left_block[12] = key[63-2];
+	left_block[11] = key[63-59];
+	left_block[10] = key[63-51];
+	left_block[9] = key[63-43];
+	left_block[8] = key[63-35];
+	left_block[7] = key[63-27];
+	//row 4
+	left_block[6] = key[63-19];
+	left_block[5] = key[63-1];
+	left_block[4] = key[63-3];
+	left_block[3] = key[63-60];
+	left_block[2] = key[63-52];
+	left_block[1] = key[63-44];
+	left_block[0] = key[63-36];
 
-
-   right_block[27] = key[63-63];
+	//right block
+		//row 1
+		right_block[27] = key[63-63];
+		right_block[27] = key[63-55];
+		right_block[27] = key[63-47];
+		right_block[27] = key[63-39];
+		right_block[27] = key[63-31];
+		right_block[27] = key[63-23];
+		right_block[27] = key[63-15];
+		//row 2
+		right_block[27] = key[63-7];
+		right_block[27] = key[63-62];
+		right_block[27] = key[63-54];
+		right_block[27] = key[63-46];
+		right_block[27] = key[63-38];
+		right_block[27] = key[63-30];
+		right_block[27] = key[63-22];
+		//row 3
+		right_block[27] = key[63-14];
+		right_block[27] = key[63-6];
+		right_block[27] = key[63-61];
+		right_block[27] = key[63-53];
+		right_block[27] = key[63-45];
+		right_block[27] = key[63-37];
+		right_block[27] = key[63-29];
+		//row 4
+		right_block[27] = key[63-21];
+		right_block[27] = key[63-13];
+		right_block[27] = key[63-5];
+		right_block[27] = key[63-28];
+		right_block[27] = key[63-20];
+		right_block[27] = key[63-12];
+		right_block[27] = key[63-4];
 
 
    logic [55:0]        out_block;
@@ -310,42 +366,42 @@ module SF (inp_block, out_block);
    input logic [31:0] inp_block;
    output logic [31:0] out_block;
 
-   //first row
-   outlblock[31] = inp_block[32-16];
-   outlblock[30] = inp_block[32-7];
-   outlblock[29] = inp_block[32-20];
-   outlblock[28] = inp_block[32-21];
-   outlblock[27] = inp_block[32-29];
-   outlblock[26] = inp_block[32-12];
-   outlblock[25] = inp_block[32-28];
-   outlblock[24] = inp_block[32-17];
-   //second row
-   outlblock[23] = inp_block[32-1];
-   outlblock[22] = inp_block[32-15];
-   outlblock[21] = inp_block[32-23];
-   outlblock[20] = inp_block[32-26];
-   outlblock[19] = inp_block[32-5];
-   outlblock[18] = inp_block[32-18];
-   outlblock[17] = inp_block[32-31];
-   outlblock[16] = inp_block[32-10];
-   //third row
-   outlblock[15] = inp_block[32-2];
-   outlblock[14] = inp_block[32-8];
-   outlblock[13] = inp_block[32-24];
-   outlblock[12] = inp_block[32-14];
-   outlblock[11] = inp_block[32-32];
-   outlblock[10] = inp_block[32-27];
-   outlblock[9] = inp_block[32-3];
-   outlblock[8] = inp_block[32-9];
-   //fourth row
-   outlblock[7] = inp_block[32-19];
-   outlblock[6] = inp_block[32-13];
-   outlblock[5] = inp_block[32-30];
-   outlblock[4] = inp_block[32-6];
-   outlblock[3] = inp_block[32-22];
-   outlblock[2] = inp_block[32-11];
-   outlblock[1] = inp_block[32-4];
-   outlblock[0] = inp_block[32-25];
+	//first row
+		outlblock[31] = inp_block[32-16];
+		outlblock[30] = inp_block[32-7];
+		outlblock[29] = inp_block[32-20];
+		outlblock[28] = inp_block[32-21];
+		outlblock[27] = inp_block[32-29];
+		outlblock[26] = inp_block[32-12];
+		outlblock[25] = inp_block[32-28];
+		outlblock[24] = inp_block[32-17];
+	//second row
+		outlblock[23] = inp_block[32-1];
+		outlblock[22] = inp_block[32-15];
+		outlblock[21] = inp_block[32-23];
+		outlblock[20] = inp_block[32-26];
+		outlblock[19] = inp_block[32-5];
+		outlblock[18] = inp_block[32-18];
+		outlblock[17] = inp_block[32-31];
+		outlblock[16] = inp_block[32-10];
+	//third row
+		outlblock[15] = inp_block[32-2];
+		outlblock[14] = inp_block[32-8];
+		outlblock[13] = inp_block[32-24];
+		outlblock[12] = inp_block[32-14];
+		outlblock[11] = inp_block[32-32];
+		outlblock[10] = inp_block[32-27];
+		outlblock[9] = inp_block[32-3];
+		outlblock[8] = inp_block[32-9];
+	//fourth row
+		outlblock[7] = inp_block[32-19];
+		outlblock[6] = inp_block[32-13];
+		outlblock[5] = inp_block[32-30];
+		outlblock[4] = inp_block[32-6];
+		outlblock[3] = inp_block[32-22];
+		outlblock[2] = inp_block[32-11];
+		outlblock[1] = inp_block[32-4];
+		outlblock[0] = inp_block[32-25];
 
 endmodule // SF
 
@@ -353,62 +409,63 @@ endmodule // SF
 module EF (inp_block, out_block);
    input logic [31:0] inp_block;
    output logic [47:0] out_block;
-//first row
-   outblock[47]= inp_block[32-32];
-   outblock[46]= inp_block[32-1];
-   outblock[45]= inp_block[32-2];
-   outblock[44]= inp_block[32-3];
-   outblock[43]= inp_block[32-4];
-   outblock[42]= inp_block[32-5];
-//second row
-   outblock[41]= inp_block[32-4];
-   outblock[40]= inp_block[32-5];
-   outblock[39]= inp_block[32-6];
-   outblock[38]= inp_block[32-7];
-   outblock[37]= inp_block[32-8];
-   outblock[36]= inp_block[32-9];
-//third row
-   outblock[35]= inp_block[32-8];
-   outblock[34]= inp_block[32-9];
-   outblock[33]= inp_block[32-10];
-   outblock[32]= inp_block[32-11];
-   outblock[31]= inp_block[32-12];
-   outblock[30]= inp_block[32-13];
-//fourth row
-   outblock[29]= inp_block[32-12];
-   outblock[28]= inp_block[32-13];
-   outblock[27]= inp_block[32-14];
-   outblock[26]= inp_block[32-15];
-   outblock[25]= inp_block[32-16];
-   outblock[24]= inp_block[32-17];
-//fifth row
-   outblock[23]= inp_block[32-16];
-   outblock[22]= inp_block[32-17];
-   outblock[21]= inp_block[32-18];
-   outblock[20]= inp_block[32-19];
-   outblock[19]= inp_block[32-20];
-   outblock[18]= inp_block[32-21];
-//sixth row
-   outblock[17]= inp_block[32-20];
-   outblock[16]= inp_block[32-21];
-   outblock[15]= inp_block[32-22];
-   outblock[14]= inp_block[32-23];
-   outblock[13]= inp_block[32-24];
-   outblock[12]= inp_block[32-25];
-//seventh row
-   outblock[11]= inp_block[32-24];
-   outblock[10]= inp_block[32-25];
-   outblock[9]= inp_block[32-26];
-   outblock[8]= inp_block[32-27];
-   outblock[7]= inp_block[32-28];
-   outblock[6]= inp_block[32-29];
-//eighth row
-   outblock[5]= inp_block[32-28];
-   outblock[4]= inp_block[32-29];
-   outblock[3]= inp_block[32-30];
-   outblock[2]= inp_block[32-31];
-   outblock[1]= inp_block[32-32];
-   outblock[0]= inp_block[32-1];
+	//first row
+	outblock[47]= inp_block[32-32];
+	outblock[46]= inp_block[32-1];
+	outblock[45]= inp_block[32-2];
+	outblock[44]= inp_block[32-3];
+	outblock[43]= inp_block[32-4];
+	outblock[42]= inp_block[32-5];
+	//second row
+	outblock[41]= inp_block[32-4];
+	outblock[40]= inp_block[32-5];
+	outblock[39]= inp_block[32-6];
+	outblock[38]= inp_block[32-7];
+	outblock[37]= inp_block[32-8];
+	outblock[36]= inp_block[32-9];
+	//third row
+	outblock[35]= inp_block[32-8];
+	outblock[34]= inp_block[32-9];
+	outblock[33]= inp_block[32-10];
+	outblock[32]= inp_block[32-11];
+	outblock[31]= inp_block[32-12];
+	outblock[30]= inp_block[32-13];
+	//fourth row
+	outblock[29]= inp_block[32-12];
+	outblock[28]= inp_block[32-13];
+	outblock[27]= inp_block[32-14];
+	outblock[26]= inp_block[32-15];
+	outblock[25]= inp_block[32-16];
+	outblock[24]= inp_block[32-17];
+	//fifth row
+	outblock[23]= inp_block[32-16];
+	outblock[22]= inp_block[32-17];
+	outblock[21]= inp_block[32-18];
+	outblock[20]= inp_block[32-19];
+	outblock[19]= inp_block[32-20];
+	outblock[18]= inp_block[32-21];
+	//sixth row
+	outblock[17]= inp_block[32-20];
+	outblock[16]= inp_block[32-21];
+	outblock[15]= inp_block[32-22];
+	outblock[14]= inp_block[32-23];
+	outblock[13]= inp_block[32-24];
+	outblock[12]= inp_block[32-25];
+	//seventh row
+	outblock[11]= inp_block[32-24];
+	outblock[10]= inp_block[32-25];
+	outblock[9]= inp_block[32-26];
+	outblock[8]= inp_block[32-27];
+	outblock[7]= inp_block[32-28];
+	outblock[6]= inp_block[32-29];
+	//eighth row
+		outblock[5]= inp_block[32-28];
+		outblock[4]= inp_block[32-29];
+		outblock[3]= inp_block[32-30];
+		outblock[2]= inp_block[32-31];
+		outblock[1]= inp_block[32-32];
+		outblock[0]= inp_block[32-1];
+		
 
 endmodule // EF
 
