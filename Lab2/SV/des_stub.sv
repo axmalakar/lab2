@@ -146,8 +146,8 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	
 	logic [27:0]left_block_shift11,right_block_shift11;
 
-	assign left_block_shift11 = {left_block_shift10[25:0],left_block1_shift10[27:26]};
-	assign right_block_shift11 = {right_block_shift[25:0],right_block_shift10[27:26]};
+	assign left_block_shift11 = {left_block_shift10[25:0],left_block_shift10[27:26]};
+	assign right_block_shift11 = {right_block_shift10[25:0],right_block_shift10[27:26]};
 
 	PC2 pc11(left_block_shift11,right_block_shift11,SubKey11);
 	//////////////
@@ -156,8 +156,8 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 
 	logic [27:0]left_block_shift12,right_block_shift12;
 
-	assign left_block_shift12 = {left_block1_shift11[25:0],left_block_shift11[27:26]};
-	assign right_block_shift12 = {right_block1_shift11[25:0],right_block_shift11[27:26]};
+	assign left_block_shift12 = {left_block_shift11[25:0],left_block_shift11[27:26]};
+	assign right_block_shift12 = {right_block_shift11[25:0],right_block_shift11[27:26]};
 
 	PC2 pc12(left_block_shift12,right_block_shift12,SubKey12);
 	//////////////
@@ -166,8 +166,8 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	
 	logic [27:0]left_block_shift13,right_block_shift13;
 
-	assign left_block_shift13 = {left_block1_shift12[25:0],left_block_shift12[27:26]};
-	assign right_block_shift13 = {right_block_shift12[25:0],right_block1_shift12[27:26]};
+	assign left_block_shift13 = {left_block_shift12[25:0],left_block_shift12[27:26]};
+	assign right_block_shift13 = {right_block_shift12[25:0],right_block_shift12[27:26]};
 
 	
 	PC2 pc13(left_block_shift13,right_block_shift13,SubKey13);
@@ -178,7 +178,7 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	logic [27:0]left_block_shift14,right_block_shift14;
 
 	assign left_block_shift14 = {left_block_shift13[25:0],left_block_shift13[27:26]};
-	assign right_block_shift14 = {right_block_shift13[25:0],right_block1_shift13[27:26]};
+	assign right_block_shift14 = {right_block_shift13[25:0],right_block_shift13[27:26]};
 
 	
 	PC2 pc14(left_block_shift14,right_block_shift14,SubKey14);
@@ -188,8 +188,8 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	
 	logic [27:0]left_block_shift15,right_block_shift15;
 
-	assign left_block_shift15 = {left_block1_shift14[25:0],left_block_shift14[27:26]};
-	assign right_block_shift15 = {right_block1_shift14[25:0],right_block_shift14[27:26]};
+	assign left_block_shift15 = {left_block_shift14[25:0],left_block_shift14[27:26]};
+	assign right_block_shift15 = {right_block_shift14[25:0],right_block_shift14[27:26]};
 
 	
 	PC2 pc15(left_block_shift15,right_block_shift15,SubKey15);
@@ -212,9 +212,6 @@ module PC1 (key, left_block, right_block);
    input logic [63:0]  key;
    output logic [27:0] left_block;
    output logic [27:0] right_block;
-
-   right_block = key[27:0];
-   left_block = key[59:32];
 
 	//left block
 	//row 1
@@ -253,36 +250,36 @@ module PC1 (key, left_block, right_block);
 	//right block
 		//row 1
 		right_block[27] = key[63-63];
-		right_block[27] = key[63-55];
-		right_block[27] = key[63-47];
-		right_block[27] = key[63-39];
-		right_block[27] = key[63-31];
-		right_block[27] = key[63-23];
-		right_block[27] = key[63-15];
+		right_block[26] = key[63-55];
+		right_block[25] = key[63-47];
+		right_block[24] = key[63-39];
+		right_block[23] = key[63-31];
+		right_block[22] = key[63-23];
+		right_block[21] = key[63-15];
 		//row 2
-		right_block[27] = key[63-7];
-		right_block[27] = key[63-62];
-		right_block[27] = key[63-54];
-		right_block[27] = key[63-46];
-		right_block[27] = key[63-38];
-		right_block[27] = key[63-30];
-		right_block[27] = key[63-22];
+		right_block[20] = key[63-7];
+		right_block[19] = key[63-62];
+		right_block[18] = key[63-54];
+		right_block[17] = key[63-46];
+		right_block[16] = key[63-38];
+		right_block[15] = key[63-30];
+		right_block[14] = key[63-22];
 		//row 3
-		right_block[27] = key[63-14];
-		right_block[27] = key[63-6];
-		right_block[27] = key[63-61];
-		right_block[27] = key[63-53];
-		right_block[27] = key[63-45];
-		right_block[27] = key[63-37];
-		right_block[27] = key[63-29];
+		right_block[13] = key[63-14];
+		right_block[12] = key[63-6];
+		right_block[11] = key[63-61];
+		right_block[10] = key[63-53];
+		right_block[9] = key[63-45];
+		right_block[8] = key[63-37];
+		right_block[7] = key[63-29];
 		//row 4
-		right_block[27] = key[63-21];
-		right_block[27] = key[63-13];
-		right_block[27] = key[63-5];
-		right_block[27] = key[63-28];
-		right_block[27] = key[63-20];
-		right_block[27] = key[63-12];
-		right_block[27] = key[63-4];
+		right_block[6] = key[63-21];
+		right_block[5] = key[63-13];
+		right_block[4] = key[63-5];
+		right_block[3] = key[63-28];
+		right_block[2] = key[63-20];
+		right_block[1] = key[63-12];
+		right_block[0] = key[63-4];
 
 
    logic [55:0]        out_block;
