@@ -347,7 +347,7 @@ module feistel (inp_block, subkey, out_block);
    logic EFblock;
 
    EF(inp_block,EFblock);
-   assign outblock=EFblock^subkey1;
+   assign outblock=EFblock^subkey;
 	
 
 	S1_box(outblock[5:0],out[3:0]);
@@ -360,8 +360,6 @@ module feistel (inp_block, subkey, out_block);
 	S8_box(outblock[47:42],out[31:28]);
 
 	SF(out,out_block);
-
-
 
 endmodule // Feistel
 
@@ -1180,36 +1178,68 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    // Initial Permutation (IP)
    IP b1 (plaintext, ip_out);
    // round 1
+   logic [63:0] r1_out;
+   round r1(ip_out, SubKey1,r1_out);
    
    // round 2
+   logic [63:0] r2_out;
+   round r2(r1_out, SubKey2,r2_out);
    
    // round 3
+   logic [63:0] r3_out;
+   round r3(r2_out, SubKey3,r3_out);
    
    // round 4
+   logic [63:0] r4_out;
+   round r4(r3_out, SubKey4,r4_out);
    
    // round 5
+   logic [63:0] r5_out;
+   round r5(r4_out, SubKey5,r5_out);
    
    // round 6
+   logic [63:0] r6_out;
+   round r6(r5_out, SubKey6,r6_out);
    
    // round 7
+   logic [63:0] r7_out;
+   round r7(r6_out, SubKey7,r7_out);
    
    // round 8
+   logic [63:0] r8_out;
+   round r8(r7_out, SubKey8,r8_out);
    
    // round 9
+   logic [63:0] r9_out;
+   round r9(r8_out, SubKey9,r9_out);
    
    // round 10
+   logic [63:0] r10_out;
+   round r10(r9_out, SubKey10,r10_out);
    
    // round 11
+   logic [63:0] r11_out;
+   round r11(r10_out, SubKey11,r11_out);
    
    // round 12
+   logic [63:0] r12_out;
+   round r12(r11_out, SubKey12,r12_out);
    
    // round 13
+   logic [63:0] r13_out;
+   round r13(r12_out, SubKey13,r13_out);
    
    // round 14
+   logic [63:0] r14_out;
+   round r14(r13_out, SubKey14,r14_out);
    
    // round 15
+   logic [63:0] r15out;
+   round r15(r14_out, SubKey15,r15_out);
    
    // round 16
+   logic [63:0] r16_out;
+   round r16(r15_out, SubKey16,r16_out);
 
    // Final Permutation (IP^{-1}) (swap output of round16)
    FP FP({r16_out[31:0], r16_out[63:32]}, ciphertext);
