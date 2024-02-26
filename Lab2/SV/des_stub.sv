@@ -343,7 +343,7 @@ module feistel (inp_block, subkey, out_block);
    output logic [31:0] out_block;
 
 	logic out[31:0];
-   logic outblock[48:0]:
+   logic outblock[47:0]:
    logic EFblock;
 
    EF(inp_block,EFblock);
@@ -1174,6 +1174,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
 		    SubKey9, SubKey10, SubKey11, SubKey12,
 		    SubKey13, SubKey14, SubKey15, SubKey16);
    // encrypt (encrypt=1) or decrypt (encrypt=0) 
+
 
    // Initial Permutation (IP)
    IP b1 (plaintext, ip_out);
