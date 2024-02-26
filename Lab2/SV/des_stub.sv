@@ -224,6 +224,7 @@ module PC2 (left_block, right_block, subkey);
 	input logic [27:0] left_block;
 	input logic [27:0] right_block;
 	output logic [47:0] subkey;
+
 	subkey = {left_block[23:0],right_block[23:0]}
 
 endmodule // PC2
@@ -234,21 +235,133 @@ module SF (inp_block, out_block);
    input logic [31:0] inp_block;
    output logic [31:0] out_block;
 
+   //first row
+   outlblock[31] = inp_block[32-16];
+   outlblock[30] = inp_block[32-7];
+   outlblock[29] = inp_block[32-20];
+   outlblock[28] = inp_block[32-21];
+   outlblock[27] = inp_block[32-29];
+   outlblock[26] = inp_block[32-12];
+   outlblock[25] = inp_block[32-28];
+   outlblock[24] = inp_block[32-17];
+   //second row
+   outlblock[23] = inp_block[32-1];
+   outlblock[22] = inp_block[32-15];
+   outlblock[21] = inp_block[32-23];
+   outlblock[20] = inp_block[32-26];
+   outlblock[19] = inp_block[32-5];
+   outlblock[18] = inp_block[32-18];
+   outlblock[17] = inp_block[32-31];
+   outlblock[16] = inp_block[32-10];
+   //third row
+   outlblock[15] = inp_block[32-2];
+   outlblock[14] = inp_block[32-8];
+   outlblock[13] = inp_block[32-24];
+   outlblock[12] = inp_block[32-14];
+   outlblock[11] = inp_block[32-32];
+   outlblock[10] = inp_block[32-27];
+   outlblock[9] = inp_block[32-3];
+   outlblock[8] = inp_block[32-9];
+   //fourth row
+   outlblock[7] = inp_block[32-19];
+   outlblock[6] = inp_block[32-13];
+   outlblock[5] = inp_block[32-30];
+   outlblock[4] = inp_block[32-6];
+   outlblock[3] = inp_block[32-22];
+   outlblock[2] = inp_block[32-11];
+   outlblock[1] = inp_block[32-4];
+   outlblock[0] = inp_block[32-25];
+
 endmodule // SF
 
 // Expansion Function
 module EF (inp_block, out_block);
-
    input logic [31:0] inp_block;
    output logic [47:0] out_block;
+//first row
+   outblock[47]= inp_block[32-32];
+   outblock[46]= inp_block[32-1];
+   outblock[45]= inp_block[32-2];
+   outblock[44]= inp_block[32-3];
+   outblock[43]= inp_block[32-4];
+   outblock[42]= inp_block[32-5];
+//second row
+   outblock[41]= inp_block[32-4];
+   outblock[40]= inp_block[32-5];
+   outblock[39]= inp_block[32-6];
+   outblock[38]= inp_block[32-7];
+   outblock[37]= inp_block[32-8];
+   outblock[36]= inp_block[32-9];
+//third row
+   outblock[35]= inp_block[32-8];
+   outblock[34]= inp_block[32-9];
+   outblock[33]= inp_block[32-10];
+   outblock[32]= inp_block[32-11];
+   outblock[31]= inp_block[32-12];
+   outblock[30]= inp_block[32-13];
+//fourth row
+   outblock[29]= inp_block[32-12];
+   outblock[28]= inp_block[32-13];
+   outblock[27]= inp_block[32-14];
+   outblock[26]= inp_block[32-15];
+   outblock[25]= inp_block[32-16];
+   outblock[24]= inp_block[32-17];
+//fifth row
+   outblock[23]= inp_block[32-16];
+   outblock[22]= inp_block[32-17];
+   outblock[21]= inp_block[32-18];
+   outblock[20]= inp_block[32-19];
+   outblock[19]= inp_block[32-20];
+   outblock[18]= inp_block[32-21];
+//sixth row
+   outblock[17]= inp_block[32-20];
+   outblock[16]= inp_block[32-21];
+   outblock[15]= inp_block[32-22];
+   outblock[14]= inp_block[32-23];
+   outblock[13]= inp_block[32-24];
+   outblock[12]= inp_block[32-25];
+//seventh row
+   outblock[11]= inp_block[32-24];
+   outblock[10]= inp_block[32-25];
+   outblock[9]= inp_block[32-26];
+   outblock[8]= inp_block[32-27];
+   outblock[7]= inp_block[32-28];
+   outblock[6]= inp_block[32-29];
+//eighth row
+   outblock[5]= inp_block[32-28];
+   outblock[4]= inp_block[32-29];
+   outblock[3]= inp_block[32-30];
+   outblock[2]= inp_block[32-31];
+   outblock[1]= inp_block[32-32];
+   outblock[0]= inp_block[32-1];
 
 endmodule // EF
 
 module feistel (inp_block, subkey, out_block);
-
    input logic [31:0]  inp_block;
    input logic [47:0]  subkey;
    output logic [31:0] out_block;
+
+	logic out[31:0];
+   logic outblock[48:0]:
+   logic EFblock;
+
+   EF(inp_block,EFblock);
+   assign outblock=EFblock^subkey1;
+	
+
+	S1_box(outblock[5:0],out[3:0]);
+	S2_box(outblock[11:6],out[7:4]);
+	S3_box(outblock[17:12],out[11:8]);
+	S4_box(outblock[23:18],out[15:12]);
+	S5_box(outblock[29:24],out[19:16]);
+	S6_box(outblock[35:30],out[23:20]);
+	S7_box(outblock[41:36],out[27:24]);
+	S8_box(outblock[47:42],out[31:28]);
+
+	SF(out,out_block);
+
+
 
 endmodule // Feistel
 
@@ -260,6 +373,9 @@ module round (inp_block, subkey, out_block);
 	logic [31:0] right_blockFeistel;//right_block final that will be the one that is brought thorugh the festel and conancated with out_block at the end
 	logic [31:0] right_blockF;
 	logic [31:0] left_block;	//left_block that will be swapped with righ_blockI and conecatged with right_blockF into out_block
+	input logic [63:0]  inp_block;
+	input logic [47:0]  subkey;
+	output logic [63:0] out_block;
 
 	assign right_blockI = inp_block[31:0];
 	assign left_block=inp_block[63:32];
@@ -270,11 +386,6 @@ module round (inp_block, subkey, out_block);
 	assign left_block = right_blockI;
 
 	assign out_block = {left_block, right_blockF};
-	
-
-	input logic [63:0]  inp_block;
-	input logic [47:0]  subkey;
-	output logic [63:0] out_block;
 
 endmodule // round1
 
@@ -1104,5 +1215,3 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    FP FP({r16_out[31:0], r16_out[63:32]}, ciphertext);
    
 endmodule // DES
-
-
