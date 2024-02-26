@@ -215,6 +215,18 @@ module PC1 (key, left_block, right_block);
    right_block = key[27:0];
    left_block = key[59:32];
 
+   //row 1
+   left_block[27] = key[63-57];
+   left_block[26] = key[63-57];
+   left_block[27] = key[63-57];
+   left_block[27] = key[63-57];
+   left_block[27] = key[63-57];
+   left_block[27] = key[63-57];
+   left_block[27] = key[63-57];
+
+
+   right_block[27] = key[63-63];
+
 
    logic [55:0]        out_block;
 
@@ -1167,6 +1179,11 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
 
    logic [63:0] 	ip_out;   
    logic [63:0] 	r16_out = 64'h0;   
+
+   //logic [63:0]		plaintextF;
+   //logic [63:0]		IV;
+
+   //assign plaintextF=plaintext ^ 
    
    // SubKey generation
    GenerateKeys k1 (key, SubKey1, SubKey2, SubKey3, SubKey4,
@@ -1174,7 +1191,9 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
 		    SubKey9, SubKey10, SubKey11, SubKey12,
 		    SubKey13, SubKey14, SubKey15, SubKey16);
    // encrypt (encrypt=1) or decrypt (encrypt=0) 
-
+   assign {subKey1,subKey2,subKey3,subKey4,subKey5,subKey6,subKey7,subKey8,subKey9,subKey10,subKey11,subKey12,subKey13,subKey14,subKey15,subKey16} = encrypt ? 
+   {subKey1,subKey2,subKey3,subKey4,subKey5,subKey6,subKey7,subKey8,subKey9,subKey10,subKey11,subKey12,subKey13,subKey14,subKey15,subKey16}:
+   {subKey16,subKey15,subKey14,subKey13,subKey12,subKey11,subKey10,subKey9,subKey8,subKey7,subKey6,subKey5,subKey4,subKey3,subKey2,subKey1};
 
    // Initial Permutation (IP)
    IP b1 (plaintext, ip_out);
