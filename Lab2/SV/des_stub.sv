@@ -241,7 +241,7 @@ module PC2 (left_block, right_block, subkey);
 
 	assign combined = {left_block[27:0], right_block[27:0]};
 
-	//Row 1
+	//Row 
 	assign subkey[47] = combined[48-14];
 	assign subkey[46] = combined[48-17];
 	assign subkey[45] = combined[48-11];
