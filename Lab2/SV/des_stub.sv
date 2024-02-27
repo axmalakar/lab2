@@ -246,38 +246,38 @@ module PC1 (key, left_block, right_block);
 	assign left_block[1] = key[64-44];
 	assign left_block[0] = key[64-36];
 	//right block
-		//row 1
-		assign right_block[27] = key[64-63];
-		assign right_block[26] = key[64-55];
-		assign right_block[25] = key[64-47];
-		assign right_block[24] = key[64-39];
-		assign right_block[23] = key[64-31];
-		assign right_block[22] = key[64-23];
-		assign right_block[21] = key[64-15];
-		//row 2
-		assign right_block[20] = key[64-7];
-		assign right_block[19] = key[64-62];
-		assign right_block[18] = key[64-54];
-		assign right_block[17] = key[64-46];
-		assign right_block[16] = key[64-38];
-		assign right_block[15] = key[64-30];
-		assign right_block[14] = key[64-22];
-		//row 3
-		assign right_block[13] = key[64-14];
-		assign right_block[12] = key[64-6];
-		assign right_block[11] = key[64-61];
-		assign right_block[10] = key[64-53];
-		assign right_block[9] = key[64-45];
-		assign right_block[8] = key[64-37];
-		assign right_block[7] = key[64-29];
-		//row 4
-		assign right_block[6] = key[64-21];
-		assign right_block[5] = key[64-13];
-		assign right_block[4] = key[64-5];
-		assign right_block[3] = key[64-28];
-		assign right_block[2] = key[64-20];
-		assign right_block[1] = key[64-12];
-		assign right_block[0] = key[64-4];
+	//row 1
+	assign right_block[27] = key[64-63];
+	assign right_block[26] = key[64-55];
+	assign right_block[25] = key[64-47];
+	assign right_block[24] = key[64-39];
+	assign right_block[23] = key[64-31];
+	assign right_block[22] = key[64-23];
+	assign right_block[21] = key[64-15];
+	//row 2
+	assign right_block[20] = key[64-7];
+	assign right_block[19] = key[64-62];
+	assign right_block[18] = key[64-54];
+	assign right_block[17] = key[64-46];
+	assign right_block[16] = key[64-38];
+	assign right_block[15] = key[64-30];
+	assign right_block[14] = key[64-22];
+	//row 3
+	assign right_block[13] = key[64-14];
+	assign right_block[12] = key[64-6];
+	assign right_block[11] = key[64-61];
+	assign right_block[10] = key[64-53];
+	assign right_block[9] = key[64-45];
+	assign right_block[8] = key[64-37];
+	assign right_block[7] = key[64-29];
+	//row 4
+	assign right_block[6] = key[64-21];
+	assign right_block[5] = key[64-13];
+	assign right_block[4] = key[64-5];
+	assign right_block[3] = key[64-28];
+	assign right_block[2] = key[64-20];
+	assign right_block[1] = key[64-12];
+	assign right_block[0] = key[64-4];
 
 endmodule // PC1
 
@@ -346,7 +346,6 @@ module PC2 (left_block, right_block, subkey);
 	assign subkey[2] = 	combined[56-36];
 	assign subkey[1] = 	combined[56-29];
 	assign subkey[0] = 	combined[56-32];
-
 
 endmodule // PC2
 
@@ -449,14 +448,13 @@ module EF (inp_block, out_block);
 	assign out_block[7]= inp_block[32-28];
 	assign out_block[6]= inp_block[32-29];
 	//eighth row
-		assign out_block[5]= inp_block[32-28];
-		assign out_block[4]= inp_block[32-29];
-		assign out_block[3]= inp_block[32-30];
-		assign out_block[2]= inp_block[32-31];
-		assign out_block[1]= inp_block[32-32];
-		assign out_block[0]= inp_block[32-1];
+	assign out_block[5]= inp_block[32-28];
+	assign out_block[4]= inp_block[32-29];
+	assign out_block[3]= inp_block[32-30];
+	assign out_block[2]= inp_block[32-31];
+	assign out_block[1]= inp_block[32-32];
+	assign out_block[0]= inp_block[32-1];
 		
-
 endmodule // EF
 
 module feistel (inp_block, subkey, out_block);
@@ -487,24 +485,26 @@ endmodule // Feistel
 
 // DES block round
 module round (inp_block, subkey, out_block);
-
-	//splitting the inp_block
-	logic [31:0] right_blockI;	//right_block initial to store the inital value before it is modified thorugh the feistel so we can properly swap with left_block
-	logic [31:0] right_blockFeistel;//right_block final that will be the one that is brought thorugh the festel and conancated with out_block at the end
-	logic [31:0] right_blockF;
-	logic [31:0] left_blockI;
-	logic [31:0] left_blockF;	//left_block that will be swapped with righ_blockI and conecatged with right_blockF into out_block
 	input logic [63:0]  inp_block;
 	input logic [47:0]  subkey;
 	output logic [63:0] out_block;
 
+	logic [31:0] right_blockI;	
+	logic [31:0] right_blockF;
+	logic [31:0] right_block_feist;
+	
+	logic [31:0] left_blockI;
+	logic [31:0] left_blockF;	
+
 	assign right_blockI = inp_block[31:0];
 	assign left_blockI=inp_block[63:32];
 
-	feistel f1(right_blockI, subkey, right_blockFeistel);
-
-	assign right_blockF = right_blockFeistel ^ left_blockI;
 	assign left_blockF = right_blockI;
+
+	feistel f1(right_blockI, subkey, right_block_feist);
+
+	assign right_blockF = right_block_feist ^ left_blockI;
+	
 
 	assign out_block = {left_blockF, right_blockF};
 
@@ -1289,8 +1289,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    logic [47:0] 	SubKey13, SubKey14, SubKey15, SubKey16;
 
    logic [63:0] 	ip_out;   
-   logic [63:0] 	r16_out;   
-
+   
    //logic [63:0]		plaintextF;
    //logic [63:0]		IV;
 
@@ -1369,7 +1368,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    round r15(r14_out, SubKey15,r15_out);
    
    // round 16
-   
+   logic [63:0] r16_out;
    round r16(r15_out, SubKey16,r16_out);
 
    // Final Permutation (IP^{-1}) (swap output of round16)
