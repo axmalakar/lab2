@@ -214,71 +214,70 @@ module PC1 (key, left_block, right_block);
 
 	//left block
 	//row 1
-	assign left_block[27] = key[63-57];
-	assign left_block[26] = key[63-49];
-	assign left_block[25] = key[63-41];
-	assign left_block[24] = key[63-33];
-	assign left_block[23] = key[63-25];
-	assign left_block[22] = key[63-17];
-	assign left_block[21] = key[63-9];
+	assign left_block[27] = key[64-57];
+	assign left_block[26] = key[64-49];
+	assign left_block[25] = key[64-41];
+	assign left_block[24] = key[64-33];
+	assign left_block[23] = key[64-25];
+	assign left_block[22] = key[64-17];
+	assign left_block[21] = key[64-9];
 	//row 2
-	assign left_block[20] = key[63-1];
-	assign left_block[19] = key[63-58];
-	assign left_block[18] = key[63-50];
-	assign left_block[17] = key[63-42];
-	assign left_block[16] = key[63-34];
-	assign left_block[15] = key[63-26];
-	assign left_block[14] = key[63-18];
+	assign left_block[20] = key[64-1];
+	assign left_block[19] = key[64-58];
+	assign left_block[18] = key[64-50];
+	assign left_block[17] = key[64-42];
+	assign left_block[16] = key[64-34];
+	assign left_block[15] = key[64-26];
+	assign left_block[14] = key[64-18];
 	//row 3
-	assign left_block[13] = key[63-10];
-	assign left_block[12] = key[63-2];
-	assign left_block[11] = key[63-59];
-	assign left_block[10] = key[63-51];
-	assign left_block[9] = key[63-43];
-	assign left_block[8] = key[63-35];
-	assign left_block[7] = key[63-27];
+	assign left_block[13] = key[64-10];
+	assign left_block[12] = key[64-2];
+	assign left_block[11] = key[64-59];
+	assign left_block[10] = key[64-51];
+	assign left_block[9] = key[64-43];
+	assign left_block[8] = key[64-35];
+	assign left_block[7] = key[64-27];
 	//row 4
-	assign left_block[6] = key[63-19];
-	assign left_block[5] = key[63-11];
-	assign left_block[4] = key[63-3];
-	assign left_block[3] = key[63-60];
-	assign left_block[2] = key[63-52];
-	assign left_block[1] = key[63-44];
-	assign left_block[0] = key[63-36];
-
+	assign left_block[6] = key[64-19];
+	assign left_block[5] = key[64-11];
+	assign left_block[4] = key[64-3];
+	assign left_block[3] = key[64-60];
+	assign left_block[2] = key[64-52];
+	assign left_block[1] = key[64-44];
+	assign left_block[0] = key[64-36];
 	//right block
 		//row 1
-		assign right_block[27] = key[63-63];
-		assign right_block[26] = key[63-55];
-		assign right_block[25] = key[63-47];
-		assign right_block[24] = key[63-39];
-		assign right_block[23] = key[63-31];
-		assign right_block[22] = key[63-23];
-		assign right_block[21] = key[63-15];
+		assign right_block[27] = key[64-63];
+		assign right_block[26] = key[64-55];
+		assign right_block[25] = key[64-47];
+		assign right_block[24] = key[64-39];
+		assign right_block[23] = key[64-31];
+		assign right_block[22] = key[64-23];
+		assign right_block[21] = key[64-15];
 		//row 2
-		assign right_block[20] = key[63-7];
-		assign right_block[19] = key[63-62];
-		assign right_block[18] = key[63-54];
-		assign right_block[17] = key[63-46];
-		assign right_block[16] = key[63-38];
-		assign right_block[15] = key[63-30];
-		assign right_block[14] = key[63-22];
+		assign right_block[20] = key[64-7];
+		assign right_block[19] = key[64-62];
+		assign right_block[18] = key[64-54];
+		assign right_block[17] = key[64-46];
+		assign right_block[16] = key[64-38];
+		assign right_block[15] = key[64-30];
+		assign right_block[14] = key[64-22];
 		//row 3
-		assign right_block[13] = key[63-14];
-		assign right_block[12] = key[63-6];
-		assign right_block[11] = key[63-61];
-		assign right_block[10] = key[63-53];
-		assign right_block[9] = key[63-45];
-		assign right_block[8] = key[63-37];
-		assign right_block[7] = key[63-29];
+		assign right_block[13] = key[64-14];
+		assign right_block[12] = key[64-6];
+		assign right_block[11] = key[64-61];
+		assign right_block[10] = key[64-53];
+		assign right_block[9] = key[64-45];
+		assign right_block[8] = key[64-37];
+		assign right_block[7] = key[64-29];
 		//row 4
-		assign right_block[6] = key[63-21];
-		assign right_block[5] = key[63-13];
-		assign right_block[4] = key[63-5];
-		assign right_block[3] = key[63-28];
-		assign right_block[2] = key[63-20];
-		assign right_block[1] = key[63-12];
-		assign right_block[0] = key[63-4];
+		assign right_block[6] = key[64-21];
+		assign right_block[5] = key[64-13];
+		assign right_block[4] = key[64-5];
+		assign right_block[3] = key[64-28];
+		assign right_block[2] = key[64-20];
+		assign right_block[1] = key[64-12];
+		assign right_block[0] = key[64-4];
 
 endmodule // PC1
 
@@ -286,7 +285,7 @@ module PC2 (left_block, right_block, subkey);
 	input logic [27:0] left_block;
 	input logic [27:0] right_block;
 	output logic [47:0] subkey;
-	logic [56:0] combined;
+	logic [55:0] combined;
 
 	assign combined = {left_block[27:0], right_block[27:0]};
 
