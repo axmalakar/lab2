@@ -31,13 +31,13 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 
 	//PC1 instantiation 1
 	//////////////
-	logic [27:0]left_block1,right_block1;
+	logic [27:0]left_block,right_block;
 	logic [27:0]left_block_shift1,right_block_shift1;
 
-	PC1 pc_1(Key,left_block1,right_block1);
+	PC1 pc_1(Key,left_block,right_block);
 
-	assign left_block_shift1 = {left_block1[26:0],left_block1[27]};
-	assign right_block_shift1 = {right_block1[26:0],right_block1[27]};
+	assign left_block_shift1 = {left_block[26:0],left_block[27]};
+	assign right_block_shift1 = {right_block[26:0],right_block[27]};
 
 	
 	PC2 pc1(left_block_shift1,right_block_shift1,SubKey1);
@@ -51,7 +51,6 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	assign right_block_shift2 = {right_block_shift1[26:0],right_block_shift1[27]};
 
 
-	
 	PC2 pc2(left_block_shift2,right_block_shift2,SubKey2);
 	//////////////
 	//PC1 instantiation 3
@@ -240,7 +239,7 @@ module PC1 (key, left_block, right_block);
 	assign left_block[7] = key[63-27];
 	//row 4
 	assign left_block[6] = key[63-19];
-	assign left_block[5] = key[63-1];
+	assign left_block[5] = key[63-11];
 	assign left_block[4] = key[63-3];
 	assign left_block[3] = key[63-60];
 	assign left_block[2] = key[63-52];
@@ -281,78 +280,73 @@ module PC1 (key, left_block, right_block);
 		assign right_block[1] = key[63-12];
 		assign right_block[0] = key[63-4];
 
-
-   logic [55:0]        out_block;
-
 endmodule // PC1
 
 module PC2 (left_block, right_block, subkey);
 	input logic [27:0] left_block;
 	input logic [27:0] right_block;
 	output logic [47:0] subkey;
-	logic [47:0] combined;
+	logic [56:0] combined;
 
 	assign combined = {left_block[27:0], right_block[27:0]};
 
 	//Row 
-	assign subkey[47] = combined[48-14];
-	assign subkey[46] = combined[48-17];
-	assign subkey[45] = combined[48-11];
-	assign subkey[44] = combined[48-24];
-	assign subkey[43] = combined[48-1];
-	assign subkey[42] = combined[48-5];
-	assign subkey[41] = combined[48-3];
-	assign subkey[40] = combined[48-28];
+	assign subkey[47] = combined[56-14];
+	assign subkey[46] = combined[56-17];
+	assign subkey[45] = combined[56-11];
+	assign subkey[44] = combined[56-24];
+	assign subkey[43] = combined[56-1];
+	assign subkey[42] = combined[56-5];
+	assign subkey[41] = combined[56-3];
+	assign subkey[40] = combined[56-28];
 
 	//Row 2
-	assign subkey[39] = combined[48-15];
-	assign subkey[38] = combined[48-6];
-	assign subkey[37] = combined[48-21];
-	assign subkey[36] = combined[48-10];
-	assign subkey[35] = combined[48-23];
-	assign subkey[34] = combined[48-19];
-	assign subkey[33] = combined[48-12];
-	assign subkey[32] = combined[48-4];
+	assign subkey[39] = combined[56-15];
+	assign subkey[38] = combined[56-6];
+	assign subkey[37] = combined[56-21];
+	assign subkey[36] = combined[56-10];
+	assign subkey[35] = combined[56-23];
+	assign subkey[34] = combined[56-19];
+	assign subkey[33] = combined[56-12];
+	assign subkey[32] = combined[56-4];
 
 	// Row 3
-	assign subkey[31] = combined[48-26];
-	assign subkey[30] = combined[48-8];
-	assign subkey[29] = combined[48-16];
-	assign subkey[28] = combined[48-7];
-	assign subkey[27] = combined[48-27];
-	assign subkey[26] = combined[48-20];
-	assign subkey[25] = combined[48-13];
-	assign subkey[24] = combined[48-2];
-
+	assign subkey[31] = combined[56-26];
+	assign subkey[30] = combined[56-8];
+	assign subkey[29] = combined[56-16];
+	assign subkey[28] = combined[56-7];
+	assign subkey[27] = combined[56-27];
+	assign subkey[26] = combined[56-20];
+	assign subkey[25] = combined[56-13];
+	assign subkey[24] = combined[56-2];
 	//Row 4
-	assign subkey[23] = combined[48-41];
-	assign subkey[22] = combined[48-52];
-	assign subkey[21] = combined[48-31];
-	assign subkey[20] = combined[48-37];
-	assign subkey[19] = combined[48-47];
-	assign subkey[18] = combined[48-55];
-	assign subkey[17] = combined[48-30];
-	assign subkey[16] = combined[48-40];
-
+	assign subkey[23] = combined[56-41];
+	assign subkey[22] = combined[56-52];
+	assign subkey[21] = combined[56-31];
+	assign subkey[20] = combined[56-37];
+	assign subkey[19] = combined[56-47];
+	assign subkey[18] = combined[56-55];
+	assign subkey[17] = combined[56-30];
+	assign subkey[16] = combined[56-40];
 	//Row 5
-	assign subkey[15] = combined[48-51];
-	assign subkey[14] = combined[48-45];
-	assign subkey[13] = combined[48-33];
-	assign subkey[12] = combined[48-48];
-	assign subkey[11] = combined[48-44];
-	assign subkey[10] = combined[48-49];
-	assign subkey[9] = 	combined[48-39];
-	assign subkey[8] = 	combined[48-56];
+	assign subkey[15] = combined[56-51];
+	assign subkey[14] = combined[56-45];
+	assign subkey[13] = combined[56-33];
+	assign subkey[12] = combined[56-48];
+	assign subkey[11] = combined[56-44];
+	assign subkey[10] = combined[56-49];
+	assign subkey[9] = 	combined[56-39];
+	assign subkey[8] = 	combined[56-56];
 
 	//Row 6
-	assign subkey[7] = 	combined[48-34];
-	assign subkey[6] = 	combined[48-53];
-	assign subkey[5] = 	combined[48-46];
-	assign subkey[4] = 	combined[48-42];
-	assign subkey[3] = 	combined[48-50];
-	assign subkey[2] = 	combined[48-36];
-	assign subkey[1] = 	combined[48-29];
-	assign subkey[0] = 	combined[48-32];
+	assign subkey[7] = 	combined[56-34];
+	assign subkey[6] = 	combined[56-53];
+	assign subkey[5] = 	combined[56-46];
+	assign subkey[4] = 	combined[56-42];
+	assign subkey[3] = 	combined[56-50];
+	assign subkey[2] = 	combined[56-36];
+	assign subkey[1] = 	combined[56-29];
+	assign subkey[0] = 	combined[56-32];
 
 
 endmodule // PC2

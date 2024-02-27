@@ -8,28 +8,484 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/lance/OneDrive/VScode/SV/lab2/lab2/Lab2/SV
-vGenerateKeys
-DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
-!s110 1708973419
+T_opt
+Z1 !s110 1709011663
+V1Y9^VNG7G=SRWdQl9Mc@b0
+04 8 4 work stimulus fast 0
+=1-f0d415fc1697-65dd72cf-295-14884
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;10.7f;67
+vDES
+Z3 DXx6 sv_std 3 std 0 22 d=_JfHTnXCN[H5FjiaJJc0
+R1
 !i10b 1
-!s100 lg4mIO;Km?_IoOk=b4j?W1
-I_MzM:^hScff463jmJ1UI=1
-VDg1SIo80bB@j0V0VzS_@n1
-!s105 des_stub_sv_unit
+!s100 Ol]@YAVbdc>LIE97Tn4GQ1
+Ik5Y3_ahI`<EY2G>Z2A>JD2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 !s105 des_stub_sv_unit
 S1
 R0
-w1708973368
-8des_stub.sv
-Fdes_stub.sv
-L0 7
-OL;L;10.7f;67
+Z6 w1709011627
+Z7 8des_stub.sv
+Z8 Fdes_stub.sv
+L0 1284
+Z9 OL;L;10.7f;67
 r1
 !s85 0
 31
-!s108 1708973419.000000
-!s107 tb_des.sv|des_stub.sv|
-!s90 des_stub.sv|tb_des.sv|
+Z10 !s108 1709011663.000000
+Z11 !s107 tb_des.sv|des_stub.sv|
+Z12 !s90 -reportprogress|300|des_stub.sv|tb_des.sv|
 !i113 0
-o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-tCvgOpt 0
+Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+n@d@e@s
+vEF
+R3
+R1
+!i10b 1
+!s100 b91A^lP61O:@]]OTYUUfg1
+I@ne4A<X>m7eX_X5k6m:P60
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 400
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@e@f
+vfeistel
+R3
+R1
+!i10b 1
+!s100 LnO<S77SDF]QA]<[1]`[O3
+IIP<dO^ok5<Kdcgh^XJBLo0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 463
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vFP
+R3
+R1
+!i10b 1
+!s100 _3TDCFU]g<Fo@:^V;_;<80
+Io6:??nSGO[]lRIRzbHY:<1
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 588
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@f@p
+vGenerateKeys
+R3
+R1
+!i10b 1
+!s100 D3jM`obgU54BG>PYYK5`92
+I[@6>;e:2JQ@`DEBFzYn^:0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 7
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
 n@generate@keys
+vIP
+R3
+R1
+!i10b 1
+!s100 =>Xj8GYbzXklRc=4`TiVD2
+I1YhmUbM4V;]eG73Vj2SM72
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 515
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@i@p
+vPC1
+R3
+R1
+!i10b 1
+!s100 V[mSa`O7gHz2Ekl6>_d192
+IDh=bT^Ug_6zC3GH]VB@gF3
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 210
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@p@c1
+vPC2
+R3
+R1
+!i10b 1
+!s100 RnTS6oWL<c2CO4YRNCJaB2
+I<2OkFjdmDWkZ06U0F18F41
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 285
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@p@c2
+vround
+R3
+R1
+!i10b 1
+!s100 k639AF<8RFEBfBzbVcH4V1
+IfS8CC^m;FLO5Qgg;oG;b[3
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 490
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+vS1_Box
+R3
+R1
+!i10b 1
+!s100 WXfDbziTR>[DbKN?7Sn2B1
+I5:eWKV<6`Li08mHlzg9Qn2
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 660
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s1_@box
+vS2_Box
+R3
+R1
+!i10b 1
+!s100 6`<O<iWNl:QbNzLk>8zVg2
+I=_?WS4>6zaYeFI9N1Q>a41
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 738
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s2_@box
+vS3_Box
+R3
+R1
+!i10b 1
+!s100 iQ_VozDgo6GO=;^D3RoNA2
+I89k0;3k6oE:OKN5]Q]]0H0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 816
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s3_@box
+vS4_Box
+R3
+R1
+!i10b 1
+!s100 bT^UPiQ2lY1;Q_ATOh?TV0
+I=_1`oeKYL_AD@:M<KIa`m1
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 894
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s4_@box
+vS5_Box
+R3
+R1
+!i10b 1
+!s100 H9BNFA6eAdWF=f7hhUjg22
+I:eTaB4SaRNB>6Rzi>XO<b0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 972
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s5_@box
+vS6_Box
+R3
+R1
+!i10b 1
+!s100 ^O^c]f]5XEY@mcUYJ;bWO3
+Im^VoVkS]oD@3`X3S[5`Q50
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 1050
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s6_@box
+vS7_Box
+R3
+R1
+!i10b 1
+!s100 :ha4bLIUVAAKKYbm;391;0
+IJnWaQjZe]CXM9Qa`=gHXe2
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 1128
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s7_@box
+vS8_Box
+R3
+R1
+!i10b 1
+!s100 3QHDb1ME5D[TmQVU@dN?P1
+IFEfO3?7W2G8aCO^=j@78X0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 1206
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s8_@box
+vSF
+R3
+R1
+!i10b 1
+!s100 AoPmR80>U>PY_HP3Y>S_n1
+I:]i=fE>zoIN>ZCHoKRIZb0
+R4
+R5
+S1
+R0
+R6
+R7
+R8
+L0 355
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
+n@s@f
+vstimulus
+R3
+R1
+!i10b 1
+!s100 eTC8DNdf>SLC8MaEDGjik1
+I8jZCe?J6G4hg5fFZdoA9:0
+R4
+!s105 tb_des_sv_unit
+S1
+R0
+w1708365011
+8tb_des.sv
+Ftb_des.sv
+L0 2
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2
