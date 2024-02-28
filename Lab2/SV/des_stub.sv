@@ -463,21 +463,21 @@ module feistel (inp_block, subkey, out_block);
    output logic [31:0] out_block;
 
 	logic[31:0] out;
-   logic [47:0]  outblock;
+   logic [47:0] xor_output;
    logic [47:0] EFblock;
 
    EF ef1(inp_block,EFblock);
-   assign outblock=EFblock^subkey;
+   assign xor_output=EFblock^subkey;
 	
 
-	S1_Box s1(outblock[5:0],out[3:0]);
-	S2_Box s2(outblock[11:6],out[7:4]);
-	S3_Box s3(outblock[17:12],out[11:8]);
-	S4_Box s4(outblock[23:18],out[15:12]);
-	S5_Box s5(outblock[29:24],out[19:16]);
-	S6_Box s6(outblock[35:30],out[23:20]);
-	S7_Box s7(outblock[41:36],out[27:24]);
-	S8_Box s8(outblock[47:42],out[31:28]);
+	S8_Box s1(xor_output[5:0],out[3:0]);
+	S7_Box s2(xor_output[11:6],out[7:4]);
+	S6_Box s3(xor_output[17:12],out[11:8]);
+	S5_Box s4(xor_output[23:18],out[15:12]);
+	S4_Box s5(xor_output[29:24],out[19:16]);
+	S3_Box s6(xor_output[35:30],out[23:20]);
+	S2_Box s7(xor_output[41:36],out[27:24]);
+	S1_Box s8(xor_output[47:42],out[31:28]);
 
 	SF sf(out,out_block);
 
@@ -497,7 +497,7 @@ module round (inp_block, subkey, out_block);
 	logic [31:0] left_blockF;	
 
 	assign right_blockI = inp_block[31:0];
-	assign left_blockI=inp_block[63:32];
+	assign left_blockI = inp_block[63:32];
 
 	assign left_blockF = right_blockI;
 
@@ -1288,6 +1288,11 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    logic [47:0] 	SubKey9, SubKey10, SubKey11, SubKey12;
    logic [47:0] 	SubKey13, SubKey14, SubKey15, SubKey16;
 
+   logic [47:0] 	FSubKey1, FSubKey2, FSubKey3, FSubKey4;   
+   logic [47:0] 	FSubKey5, FSubKey6, FSubKey7, FSubKey8;   
+   logic [47:0] 	FSubKey9, FSubKey10, FSubKey11, FSubKey12;
+   logic [47:0] 	FSubKey13, FSubKey14, FSubKey15, FSubKey16;
+
    logic [63:0] 	ip_out;   
    
    //logic [63:0]		plaintextF;
@@ -1301,75 +1306,75 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
 		    SubKey9, SubKey10, SubKey11, SubKey12,
 		    SubKey13, SubKey14, SubKey15, SubKey16);
    // encrypt (encrypt=1) or decrypt (encrypt=0) 
-   assign {subKey1,subKey2,subKey3,subKey4,subKey5,subKey6,subKey7,subKey8,subKey9,subKey10,subKey11,subKey12,subKey13,subKey14,subKey15,subKey16} = encrypt ? 
-   {subKey1,subKey2,subKey3,subKey4,subKey5,subKey6,subKey7,subKey8,subKey9,subKey10,subKey11,subKey12,subKey13,subKey14,subKey15,subKey16}:
-   {subKey16,subKey15,subKey14,subKey13,subKey12,subKey11,subKey10,subKey9,subKey8,subKey7,subKey6,subKey5,subKey4,subKey3,subKey2,subKey1};
+   assign {FSubKey1,FSubKey2,FSubKey3,FSubKey4,FSubKey5,FSubKey6,FSubKey7,FSubKey8,FSubKey9,FSubKey10,FSubKey11,FSubKey12,FSubKey13,FSubKey14,FSubKey15,FSubKey16} = encrypt ? 
+   {SubKey1,SubKey2,SubKey3,SubKey4,SubKey5,SubKey6,SubKey7,SubKey8,SubKey9,SubKey10,SubKey11,SubKey12,SubKey13,SubKey14,SubKey15,SubKey16}:
+   {SubKey16,SubKey15,SubKey14,SubKey13,SubKey12,SubKey11,SubKey10,SubKey9,SubKey8,SubKey7,SubKey6,SubKey5,SubKey4,SubKey3,SubKey2,SubKey1};
 
    // Initial Permutation (IP)
    IP b1 (plaintext, ip_out);
    // round 1
    logic [63:0] r1_out;
-   round r1(ip_out, SubKey1,r1_out);
+   round r1(ip_out, FSubKey1,r1_out);
    
    // round 2
    logic [63:0] r2_out;
-   round r2(r1_out, SubKey2,r2_out);
+   round r2(r1_out, FSubKey2,r2_out);
    
    // round 3
    logic [63:0] r3_out;
-   round r3(r2_out, SubKey3,r3_out);
+   round r3(r2_out, FSubKey3,r3_out);
    
    // round 4
    logic [63:0] r4_out;
-   round r4(r3_out, SubKey4,r4_out);
+   round r4(r3_out, FSubKey4,r4_out);
    
    // round 5
    logic [63:0] r5_out;
-   round r5(r4_out, SubKey5,r5_out);
+   round r5(r4_out, FSubKey5,r5_out);
    
    // round 6
    logic [63:0] r6_out;
-   round r6(r5_out, SubKey6,r6_out);
+   round r6(r5_out, FSubKey6,r6_out);
    
    // round 7
    logic [63:0] r7_out;
-   round r7(r6_out, SubKey7,r7_out);
+   round r7(r6_out, FSubKey7,r7_out);
    
    // round 8
    logic [63:0] r8_out;
-   round r8(r7_out, SubKey8,r8_out);
+   round r8(r7_out, FSubKey8,r8_out);
    
    // round 9
    logic [63:0] r9_out;
-   round r9(r8_out, SubKey9,r9_out);
+   round r9(r8_out, FSubKey9,r9_out);
    
    // round 10
    logic [63:0] r10_out;
-   round r10(r9_out, SubKey10,r10_out);
+   round r10(r9_out, FSubKey10,r10_out);
    
    // round 11
    logic [63:0] r11_out;
-   round r11(r10_out, SubKey11,r11_out);
+   round r11(r10_out, FSubKey11,r11_out);
    
    // round 12
    logic [63:0] r12_out;
-   round r12(r11_out, SubKey12,r12_out);
+   round r12(r11_out, FSubKey12,r12_out);
    
    // round 13
    logic [63:0] r13_out;
-   round r13(r12_out, SubKey13,r13_out);
+   round r13(r12_out, FSubKey13,r13_out);
    
    // round 14
    logic [63:0] r14_out;
-   round r14(r13_out, SubKey14,r14_out);
+   round r14(r13_out, FSubKey14,r14_out);
    
    // round 15
    logic [63:0] r15_out;
-   round r15(r14_out, SubKey15,r15_out);
+   round r15(r14_out, FSubKey15,r15_out);
    
    // round 16
    logic [63:0] r16_out;
-   round r16(r15_out, SubKey16,r16_out);
+   round r16(r15_out, FSubKey16,r16_out);
 
    // Final Permutation (IP^{-1}) (swap output of round16)
    FP FP({r16_out[31:0], r16_out[63:32]}, ciphertext);
