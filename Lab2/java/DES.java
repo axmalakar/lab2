@@ -292,14 +292,14 @@ class DES {
 	//String plaintext = "123456abcd132536";
 	//String key = "133457799bbcdff1";	
 	// Example 2
-	String plaintext = "2579db866c0f528c";
-	String key = "433e4529462a4a62";
+	//String plaintext = "2579db866c0f528c";
+	//String key = "433e4529462a4a62";
 	// Example 3
 	//String plaintext = "ed7bc587a26f8c67";
-	//String key = "3b3898371520f75e";
+	//      String key = "3b3898371520f75e";
 	// Example 4
-	//String key = "0E329232EA6D0D73";	
-        //String plaintext = "318101b45f32078d";
+	String key =       "b9f1796dad80f129";	
+    String plaintext = "ed7bc587a26f8c67";
 	
 	String ciphertext;
 	String decryptedPlaintext;

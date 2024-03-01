@@ -3,7 +3,7 @@ module stimulus;
 
    logic [63:0]  key;
    logic [63:0]  plaintext;
-   logic 	 encrypt;
+   logic 	       encrypt;
    logic [63:0]  ciphertext;
 
    logic 	 clk;
@@ -17,7 +17,7 @@ module stimulus;
    integer 	 handle3;
    integer 	 desc3;
    integer 	 i;  
-   integer       j;
+   integer   j;
 
    DES dut (key, plaintext, encrypt, ciphertext);
 
@@ -36,6 +36,8 @@ module stimulus;
 	errors = 0;		
 	desc3 = handle3;
      end
+
+
 
    // apply test vectors on rising edge of clk
    always @(posedge clk)
@@ -58,8 +60,9 @@ module stimulus;
 	 begin 
 	    $display("%d tests completed with %d errors", 
 		     vectornum, errors);
-	    $finish;
+	   $finish;
 	 end
-    end
+  end
+
 
 endmodule // stimulus
