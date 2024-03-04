@@ -97,23 +97,4 @@
 # Break in Module stimulus at tb_des.sv line 63
 # End time: 10:57:30 on Mar 04,2024, Elapsed time: 0:02:25
 # Errors: 0, Warnings: 0
-=======
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: axmal  Hostname: DESKTOP-YOGA  ProcessID: 3008
-#           Attempting to use alternate WLF file "./wlftdxvzj2".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftdxvzj2
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-# configure wave not supported in batch mode
-#         10 tests completed with          0 errors
-# ** Note: $finish    : tb_des.sv(63)
-#    Time: 95 ns  Iteration: 1  Instance: /stimulus
-# End time: 12:41:39 on Mar 01,2024, Elapsed time: 0:00:02
-# Errors: 0, Warnings: 2
->>>>>>> a72227faa47d69fc82d15ac4dd5ec22376cf00e9
+
