@@ -1,0 +1,53 @@
+# Current time Tue Feb 27 15:23:13 2024
+# ModelSim SE Stack Trace
+# Program = vish
+# Id = "2021.3"
+# Version = "2021.07"
+# Date = "Jul 13 2021"
+# Platform = win64
+
+Exception c0000005 has occurred at address 5c38db2f. Traceback:
+# 0    0x5c38db2f: 'Tcl_GetString + 0xf'
+# 1    0x1401f8173: 'Mtirpc_Init + 0x6e513'
+# 2    0x1401f8687: 'Mtirpc_Init + 0x6ea27'
+# 3    0x1403ee99b: 'Sqlite3_Unload + 0x1a16b'
+# 4    0x1401f6acd: 'Mtirpc_Init + 0x6ce6d'
+# 5    0x1401f739b: 'Mtirpc_Init + 0x6d73b'
+# 6    0x14012b88b: '<unknown (@0x14012b88b)>'
+# 7    0x5c2c7103: 'TclNRRunCallbacks + 0x63'
+# 8    0x5c2c8974: 'Tcl_EvalEx + 0xa34'
+# 9    0x5c3b56c3: 'TclCheckInterpTraces + 0x903'
+# 10   0x5c3b60b1: 'TclCallVarTraces + 0x301'
+# 11   0x5c3bf0fd: 'Tcl_ObjSetVar2 + 0x4ad'
+# 12   0x5c337c58: 'Tcl_NRExprObj + 0x22c8'
+# 13   0x5c2c7103: 'TclNRRunCallbacks + 0x63'
+# 14   0x7ffb51f80d9a: 'Itcl_EvalMemberCode + 0x3ba'
+# 15   0x7ffb51f820e0: 'Itcl_ExecProc + 0x120'
+# 16   0x5c2c7103: 'TclNRRunCallbacks + 0x63'
+# 17   0x7ffb51f80d9a: 'Itcl_EvalMemberCode + 0x3ba'
+# 18   0x7ffb51f820e0: 'Itcl_ExecProc + 0x120'
+# 19   0x5c2c7103: 'TclNRRunCallbacks + 0x63'
+# 20   0x5c2c8974: 'Tcl_EvalEx + 0xa34'
+# 21   0x5c3b56c3: 'TclCheckInterpTraces + 0x903'
+# 22   0x5c3b60b1: 'TclCallVarTraces + 0x301'
+# 23   0x5c3bf0fd: 'Tcl_ObjSetVar2 + 0x4ad'
+# 24   0x5c337c58: 'Tcl_NRExprObj + 0x22c8'
+# 25   0x5c2c7103: 'TclNRRunCallbacks + 0x63'
+# 26   0x5c2c8974: 'Tcl_EvalEx + 0xa34'
+# 27   0x5c2c7f68: 'Tcl_EvalEx + 0x28'
+# 28   0x5c10431a: 'Tk_BindEvent + 0x91a'
+# 29   0x5c13bd41: 'TkBindEventProc + 0x291'
+# 30   0x5c14c614: 'Tk_HandleEvent + 0x2f4'
+# 31   0x5c14b2da: 'TkDeleteThreadExitHandler + 0x31a'
+# 32   0x5c37a56d: 'Tcl_ServiceEvent + 0xed'
+# 33   0x5c37a9e4: 'Tcl_DoOneEvent + 0x184'
+# 34   0x5c14aee5: 'Tk_MainLoop + 0x25'
+# 35   0x5c18d282: 'Tk_MainEx + 0x932'
+# 36   0x1401ad2a2: 'Mtirpc_Init + 0x23642'
+# 37   0x1401b027e: 'Mtirpc_Init + 0x2661e'
+# 38   0x140785d90: 'Tclsqlite3_Init + 0x1c000'
+# 39   0x7ffb742d257d: 'BaseThreadInitThunk + 0x1d'
+# 40   0x7ffb75faaa58: 'RtlUserThreadStart + 0x28'
+StackWalk failed 0
+# End of Stack Trace
+
