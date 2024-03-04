@@ -12,11 +12,8 @@
 # //  18 U.S.C. Section 1905.
 # //
 # do des.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is lance@LANCESPC.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is lance@LANCESPC.
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE-64 vlog 10.7f Compiler 2020.03 Mar 24 2020
-# Start time: 12:30:22 on Feb 28,2024
+# Start time: 10:55:04 on Mar 04,2024
 # vlog -reportprogress 300 des_stub.sv tb_des.sv 
 # -- Compiling module GenerateKeys
 # -- Compiling module PC1
@@ -40,10 +37,10 @@
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:30:22 on Feb 28,2024, Elapsed time: 0:00:00
+# End time: 10:55:05 on Mar 04,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:30:22 on Feb 28,2024
+# Start time: 10:55:05 on Mar 04,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.stimulus(fast)
@@ -66,5 +63,18 @@
 # Loading work.SF(fast)
 # Loading work.FP(fast)
 # .main_pane.wave.interior.cs.body.pw.wf
-# End time: 12:32:15 on Feb 28,2024, Elapsed time: 0:01:53
-# Errors: 0, Warnings: 0
+#           2f3a7b8d921c4e50f 5d98a83beaecfe45 1 || d8f05c2ffe0f07b5 || d8f05c2ffe0f07b5 1
+#           292e6d1f8b405a37c 5d98a83beaecfe45 1 || c3fe989372cbfd24 || c3fe989372cbfd24 1
+#           26be98d5a0fc21d4e 5d98a83beaecfe45 1 || 87e7c19bcbedbe69 || 87e7c19bcbedbe69 1
+#           2ccfe44fad9c2c97c 5d98a83beaecfe45 0 || a0b75e84f23c6d91 || a0b75e84f23c6d91 1
+#           2cae2160733575ba6 5d98a83beaecfe45 0 || 5e48f96a7d2c1b3f || 5e48f96a7d2c1b3f 1
+#           281c42e8b5e1fb009 5d98a83beaecfe45 0 || d4c3e0b75a1f8e29 || d4c3e0b75a1f8e29 1
+#           248af1c32d79e65b0 8cd93d0e92e9b538 1 || 5d14aecc7e12a2fc || 5d14aecc7e12a2fc 1
+#           23d672e9f8ca15b74 8cd93d0e92e9b538 1 || 0d8145cd0f84c000 || 0d8145cd0f84c000 1
+#           27fc92a3e6d815fbc 8cd93d0e92e9b538 1 || 0ed473872261f37a || 0ed473872261f37a 1
+#           28952a8230acdb058 8cd93d0e92e9b538 0 || 9a3b51ecf76d2805 || 9a3b51ecf76d2805 1
+#         10 tests completed with          0 errors
+# ** Note: $finish    : tb_des.sv(63)
+#    Time: 95 ns  Iteration: 1  Instance: /stimulus
+# 1
+# Break in Module stimulus at tb_des.sv line 63

@@ -11,7 +11,7 @@ module stimulus;
    logic [31:0]  vectornum;
    logic [63:0]  result;
    logic [7:0] 	 op;   
-   logic [199:0] testvectors[511:0];
+   logic [239:0] testvectors[614:0];
      
    
    integer 	 handle3;
@@ -51,10 +51,12 @@ module stimulus;
 	 begin
 	    errors = errors + 1;
 	 end
-       $fdisplay(desc3, "%h %h %b || %h || %h %b", 
+        $display(desc3, "%h %h %b || %h || %h %b", 
+		 plaintext, key, encrypt, ciphertext, result, (result == ciphertext));
+        $fdisplay(desc3, "%h %h %b || %h || %h %b", 
 		 plaintext, key, encrypt, ciphertext, result, (result == ciphertext));
        vectornum = vectornum + 1;
-       if (testvectors[vectornum] === 200'bx) 
+       if (vectornum === 10) 
 	 begin 
 	    $display("%d tests completed with %d errors", 
 		     vectornum, errors);
