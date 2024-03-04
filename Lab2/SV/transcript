@@ -78,3 +78,5 @@
 #    Time: 95 ns  Iteration: 1  Instance: /stimulus
 # 1
 # Break in Module stimulus at tb_des.sv line 63
+# End time: 10:57:30 on Mar 04,2024, Elapsed time: 0:02:25
+# Errors: 0, Warnings: 0
