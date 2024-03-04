@@ -58,7 +58,7 @@ module stimulus;
         $fdisplay(desc3, "%h %h %b || %h || %h %b", 
 		 plaintext, key, encrypt, ciphertext, result, (result == ciphertext));
        vectornum = vectornum + 1;
-       if (vectornum === 10) 
+       if (vectornum === 12) 
 	 begin 
 	    $display("%d tests completed with %d errors", 
 		     vectornum, errors);
