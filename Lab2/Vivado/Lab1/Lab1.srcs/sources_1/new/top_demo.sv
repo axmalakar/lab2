@@ -43,9 +43,42 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
+  logic [63:0] key;
+  logic [63:0] ptxt;
+  logic [63:0] ctxt;
+  logic        encrypt;
+  logic        sel;
+
+  //Which Key??
+  assign key = sw[2] ? 433e4529462a4a62 : 133457799bbcdff1 ;
   
   // Place TicTacToe instantiation here
+  DES dut(.key(key), .plaintext(ptxt),.encrypt(encrypt), .ciphertext(ctxt));
   
+  //Switch case for the 7-seg display
+  always @(*) begin
+    case(sel)
+
+      //Plain text
+      4'b0000 : // 7 - seg = sw[3:0]; 
+      4'b0001 : ;
+      4'b0010 : ;
+      4'b0011 : ;
+
+      //Key 
+      4'b0100 : ;
+      4'b0101 : ;
+      4'b0110 : ;
+      4'b0111 : ;
+
+      //Cipher text
+      4'1100 : ;
+      4'1101 : ;
+      4'1110 : ;
+      4'1111 : ;
+    endcase
+  end
+
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
