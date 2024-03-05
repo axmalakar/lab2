@@ -292,10 +292,10 @@ class DES {
 	//String plaintext = "123456abcd132536";
 	//String key = "133457799bbcdff1";	
 	// Example 2
-	String plaintext = "1B9D4F2E5C8A7E3D";
-	String key = "8cd93d0e92e9b538";
+	String plaintext = "0000000000000000";
+	String key = "5d98a83beaecfe45";
 	// Example 3
-	//String plaintext = "ed7bc587a26f8c67";
+	//String plaintext = "81C42E8B5E1FB009";
 	//String key = "3b3898371520f75e";
 	// Example 4
 	//String key = "0E329232EA6D0D73";	
