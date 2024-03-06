@@ -1,0 +1,106 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date         : Wed Mar  6 15:14:59 2024
+| Host         : CEAT-ENDV350-07 running 64-bit major release  (build 9200)
+| Command      : report_timing -file route_report_timing_0.rpt -rpx route_report_timing_0.rpx
+| Design       : top_demo
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 sw[6]
+                            (input port)
+  Destination:            sseg2_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        52.711ns  (logic 8.127ns (15.419%)  route 44.584ns (84.581%))
+  Logic Levels:           37  (IBUF=1 LUT2=6 LUT3=4 LUT4=1 LUT5=5 LUT6=20)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    W10                                               0.000     0.000 r  sw[6] (IN)
+                         net (fo=0)                   0.000     0.000    sw[6]
+    W10                  IBUF (Prop_ibuf_I_O)         1.601     1.601 r  sw_IBUF[6]_inst/O
+                         net (fo=389, routed)         5.923     7.525    sw_IBUF[6]
+    SLICE_X71Y36         LUT2 (Prop_lut2_I0_O)        0.152     7.677 r  g0_b3__111/O
+                         net (fo=10, routed)          1.835     9.512    dut/r1/right_block_feist[24]
+    SLICE_X61Y42         LUT2 (Prop_lut2_I1_O)        0.332     9.844 r  g0_b0__1_i_1/O
+                         net (fo=8, routed)           1.259    11.103    dut/r2/f1/xor_output[35]
+    SLICE_X64Y36         LUT6 (Prop_lut6_I0_O)        0.124    11.227 r  g0_b2__1/O
+                         net (fo=7, routed)           1.905    13.132    dut/r2/right_block_feist[4]
+    SLICE_X57Y43         LUT2 (Prop_lut2_I0_O)        0.124    13.256 r  g0_b0__3_i_1/O
+                         net (fo=8, routed)           1.482    14.738    dut/r3/f1/xor_output[5]
+    SLICE_X62Y36         LUT6 (Prop_lut6_I5_O)        0.124    14.862 r  g0_b3__7/O
+                         net (fo=8, routed)           1.196    16.058    dut/r3/right_block_feist[27]
+    SLICE_X58Y41         LUT3 (Prop_lut3_I1_O)        0.148    16.206 r  g0_b0__10_i_3/O
+                         net (fo=8, routed)           1.132    17.338    dut/r4/f1/xor_output[42]
+    SLICE_X60Y37         LUT6 (Prop_lut6_I3_O)        0.328    17.666 r  g0_b2__12/O
+                         net (fo=6, routed)           1.559    19.225    dut/r4/right_block_feist[4]
+    SLICE_X64Y42         LUT3 (Prop_lut3_I1_O)        0.124    19.349 r  g0_b0__14_i_1/O
+                         net (fo=8, routed)           0.993    20.342    dut/r5/f1/xor_output[5]
+    SLICE_X65Y39         LUT6 (Prop_lut6_I5_O)        0.124    20.466 r  g0_b3__19/O
+                         net (fo=7, routed)           0.979    21.444    dut/r5/right_block_feist[27]
+    SLICE_X59Y39         LUT3 (Prop_lut3_I0_O)        0.124    21.568 r  g0_b0__23_i_3/O
+                         net (fo=4, routed)           1.108    22.676    dut/r5_out[27]
+    SLICE_X62Y38         LUT6 (Prop_lut6_I4_O)        0.124    22.800 r  g0_b3__23/O
+                         net (fo=3, routed)           0.957    23.757    dut/r6/right_block_feist[23]
+    SLICE_X66Y37         LUT5 (Prop_lut5_I0_O)        0.150    23.907 r  g0_b0__32_i_4/O
+                         net (fo=8, routed)           1.417    25.325    dut/r7/f1/xor_output[34]
+    SLICE_X76Y39         LUT6 (Prop_lut6_I4_O)        0.328    25.653 r  g0_b1__34/O
+                         net (fo=3, routed)           1.372    27.025    dut/r7/right_block_feist[30]
+    SLICE_X62Y37         LUT5 (Prop_lut5_I1_O)        0.148    27.173 r  g0_b0__39_i_2/O
+                         net (fo=4, routed)           0.971    28.143    dut/r8/f1/xor_output[45]
+    SLICE_X61Y40         LUT6 (Prop_lut6_I2_O)        0.328    28.471 r  g0_b3__39/O
+                         net (fo=2, routed)           0.857    29.328    dut/r8/right_block_feist[23]
+    SLICE_X66Y37         LUT5 (Prop_lut5_I4_O)        0.150    29.478 r  g0_b0__50_i_5/O
+                         net (fo=10, routed)          1.704    31.182    dut/r8_out[23]
+    SLICE_X75Y41         LUT6 (Prop_lut6_I4_O)        0.348    31.530 r  g0_b1__50/O
+                         net (fo=2, routed)           1.368    32.897    dut/r9/right_block_feist[30]
+    SLICE_X62Y37         LUT5 (Prop_lut5_I0_O)        0.153    33.050 r  g0_b0__55_i_2/O
+                         net (fo=7, routed)           0.957    34.008    dut/r9_out[30]
+    SLICE_X60Y41         LUT6 (Prop_lut6_I2_O)        0.331    34.339 r  g0_b3__55/O
+                         net (fo=6, routed)           1.055    35.394    dut/r10/right_block_feist[23]
+    SLICE_X70Y42         LUT3 (Prop_lut3_I0_O)        0.124    35.518 r  g0_b0__66_i_5/O
+                         net (fo=4, routed)           0.847    36.365    dut/r11/f1/xor_output[36]
+    SLICE_X75Y42         LUT6 (Prop_lut6_I4_O)        0.124    36.489 r  g0_b3__66/O
+                         net (fo=1, routed)           0.618    37.107    dut/r11/right_block_feist[19]
+    SLICE_X68Y39         LUT6 (Prop_lut6_I5_O)        0.124    37.231 r  g0_b0__76_i_4/O
+                         net (fo=10, routed)          1.581    38.812    dut/r11_out[19]
+    SLICE_X56Y45         LUT2 (Prop_lut2_I1_O)        0.124    38.936 r  g0_b0__72_i_5/O
+                         net (fo=4, routed)           0.893    39.829    dut/r12/f1/xor_output[30]
+    SLICE_X58Y41         LUT6 (Prop_lut6_I4_O)        0.124    39.953 r  g0_b1__72/O
+                         net (fo=1, routed)           0.282    40.235    dut/r12/right_block_feist[2]
+    SLICE_X58Y41         LUT6 (Prop_lut6_I5_O)        0.124    40.359 r  g0_b0__83_i_7/O
+                         net (fo=3, routed)           0.733    41.092    dut/r12_out__0[2]
+    SLICE_X64Y42         LUT2 (Prop_lut2_I1_O)        0.118    41.210 r  g0_b0__83_i_3/O
+                         net (fo=4, routed)           0.862    42.072    dut/r13/f1/xor_output[3]
+    SLICE_X65Y43         LUT6 (Prop_lut6_I2_O)        0.326    42.398 r  g0_b0__83/O
+                         net (fo=5, routed)           1.207    43.604    dut/r13/right_block_feist[11]
+    SLICE_X68Y48         LUT5 (Prop_lut5_I0_O)        0.152    43.756 r  g0_b0__92_i_5/O
+                         net (fo=4, routed)           0.467    44.223    dut/r14/f1/xor_output[18]
+    SLICE_X68Y48         LUT6 (Prop_lut6_I4_O)        0.326    44.549 r  g0_b1__92/O
+                         net (fo=2, routed)           0.931    45.480    dut/r14/right_block_feist[7]
+    SLICE_X63Y45         LUT4 (Prop_lut4_I0_O)        0.150    45.630 r  g0_b0__93_i_4/O
+                         net (fo=8, routed)           1.149    46.779    dut/r15/f1/xor_output[12]
+    SLICE_X57Y43         LUT6 (Prop_lut6_I4_O)        0.326    47.105 r  g0_b3__96/O
+                         net (fo=2, routed)           0.820    47.925    dut/r15/right_block_feist[28]
+    SLICE_X56Y44         LUT6 (Prop_lut6_I5_O)        0.124    48.049 r  g0_b0__101_i_7/O
+                         net (fo=2, routed)           1.269    49.318    dut/r15_out__0[28]
+    SLICE_X68Y46         LUT2 (Prop_lut2_I1_O)        0.124    49.442 r  g0_b0__101_i_1/O
+                         net (fo=4, routed)           0.982    50.423    dut/r16/f1/xor_output[43]
+    SLICE_X63Y46         LUT6 (Prop_lut6_I0_O)        0.124    50.547 r  g0_b3__101/O
+                         net (fo=1, routed)           0.759    51.306    dut/r16/right_block_feist[23]
+    SLICE_X66Y45         LUT6 (Prop_lut6_I5_O)        0.124    51.430 r  sseg2_reg[0]_i_4/O
+                         net (fo=1, routed)           0.632    52.062    sseg2_reg[0]_i_4_n_0
+    SLICE_X65Y46         LUT6 (Prop_lut6_I2_O)        0.124    52.186 r  sseg2_reg[0]_i_1/O
+                         net (fo=1, routed)           0.525    52.711    sseg2__0[0]
+    SLICE_X64Y47         LDCE                                         r  sseg2_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
